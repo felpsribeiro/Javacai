@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Background.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Início" />
+          <Menu mnemonicParsing="false" text="Vendas">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Historico" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Estoque" />
+            <Menu mnemonicParsing="false" text="Entrada" />
+            <Menu disable="true" mnemonicParsing="false" text="Relatórios">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Cadastro">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Configurações">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</Pane>
