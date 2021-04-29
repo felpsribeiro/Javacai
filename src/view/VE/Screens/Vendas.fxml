@@ -50,16 +50,32 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ChoiceBox layoutX="477.0" layoutY="167.0" prefHeight="25.0" prefWidth="163.0" />
-      <ChoiceBox layoutX="477.0" layoutY="208.0" prefHeight="25.0" prefWidth="163.0" />
-      <ChoiceBox layoutX="477.0" layoutY="246.0" prefHeight="25.0" prefWidth="163.0" />
-      <ChoiceBox layoutX="477.0" layoutY="285.0" prefHeight="25.0" prefWidth="163.0" />
-      <ChoiceBox layoutX="477.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxCopo" layoutX="477.0" layoutY="167.0" prefHeight="25.0" prefWidth="163.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ImageView fitHeight="30.0" fitWidth="200.0" layoutX="348.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+      <ChoiceBox fx:id="choiceBoxCreme" layoutX="477.0" layoutY="208.0" prefHeight="25.0" prefWidth="163.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ChoiceBox fx:id="choiceBoxAcai" layoutX="477.0" layoutY="246.0" prefHeight="25.0" prefWidth="163.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ChoiceBox fx:id="choiceBoxCobertura" layoutX="477.0" layoutY="285.0" prefHeight="25.0" prefWidth="163.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ChoiceBox fx:id="choiceBoxRe1" layoutX="477.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="30.0" fitWidth="200.0" layoutX="348.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ButtonCadastrar.png" />
          </image>
@@ -67,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="200.0" layoutX="512.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonHistoricoVendas" fitHeight="30.0" fitWidth="200.0" layoutX="512.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ButtonHistorico.png" />
          </image>
@@ -105,27 +121,27 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="549.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe2" layoutX="549.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox layoutX="622.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe3" layoutX="622.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox disable="true" layoutX="622.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe6" disable="true" layoutX="622.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox disable="true" layoutX="549.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe5" disable="true" layoutX="549.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox disable="true" layoutX="477.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe4" disable="true" layoutX="477.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
