@@ -44,74 +44,78 @@
                </items>
             </Menu>
         </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuBar>
       <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="40.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="725.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonBuscar" fitHeight="30.0" fitWidth="147.0" layoutX="142.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
          <image>
-            <Image url="@../Images/ButtonFiltrar.png" />
+            <Image url="@../Images/ButtonBuscar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="buttonVoltar" fitHeight="30.0" fitWidth="200.0" layoutX="141.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ButtonVoltar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="62.0" layoutY="110.0" text="Estoque">
+      <Label layoutX="62.0" layoutY="110.0" text="Tela de Vendas">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="76.0" layoutY="174.0" text="ID:" textAlignment="RIGHT">
+      <Label layoutX="139.0" layoutY="175.0" text="Nº Pedido:" textAlignment="RIGHT">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="272.0" layoutY="174.0" text="Nome:" textAlignment="RIGHT">
+      <Label layoutX="88.0" layoutY="208.0" text="Tamanho do Copo:" textAlignment="RIGHT">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="492.0" layoutY="175.0" text="Tipo:" textAlignment="RIGHT">
+      <Label layoutX="76.0" layoutY="241.0" text="Data Inicial da Busca:" textAlignment="RIGHT">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceBoxAcai" layoutX="530.0" layoutY="172.0" prefHeight="25.0" prefWidth="163.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
-      <TextField layoutX="98.0" layoutY="172.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="318.0" layoutY="172.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="72.0" layoutY="219.0" prefHeight="3.0" prefWidth="787.0" />
-      <TableView layoutX="71.0" layoutY="238.0" prefHeight="266.0" prefWidth="787.0">
+      <Label layoutX="83.0" layoutY="277.0" text="Data Final da Busca:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="312.0" text="Horário Inicial da Busca:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="347.0" text="Horário Final da Busca:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="215.0" layoutY="172.0" />
+      <TextField fx:id="textFieldCop" layoutX="215.0" layoutY="205.0" />
+      <TextField fx:id="textFieldDataIn" layoutX="215.0" layoutY="239.0" />
+      <TextField fx:id="textFieldDataFi" layoutX="215.0" layoutY="274.0" />
+      <TextField fx:id="textFieldHoraIn" layoutX="215.0" layoutY="309.0" />
+      <TextField fx:id="textFieldHoraFi" layoutX="215.0" layoutY="344.0" />
+      <Separator layoutX="382.0" layoutY="148.0" orientation="VERTICAL" prefHeight="370.0" prefWidth="1.0" />
+      <TableView layoutX="394.0" layoutY="157.0" prefHeight="355.0" prefWidth="506.0">
         <columns>
-          <TableColumn prefWidth="40.0" text="ID" />
-          <TableColumn prefWidth="50.0" text="Nome" />
-            <TableColumn prefWidth="50.0" text="Tipo" />
-            <TableColumn prefWidth="95.0" text="Un de Entrada" />
-            <TableColumn prefWidth="125.0" text="Quantidade Entrada" />
-            <TableColumn prefWidth="75.0" text="Un de Saída" />
-            <TableColumn prefWidth="125.0" text="Quantidade Saída" />
-            <TableColumn prefWidth="110.0" text="Ultima Entrada" />
-            <TableColumn prefWidth="110.0" text="Ultima Saída" />
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
         </columns>
-         <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
-         </cursor>
-         <effect>
-            <DropShadow height="6.93" radius="3.9825" width="11.0" />
-         </effect>
       </TableView>
    </children>
 </Pane>

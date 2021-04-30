@@ -44,6 +44,9 @@
                </items>
             </Menu>
         </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </MenuBar>
       <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="40.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
