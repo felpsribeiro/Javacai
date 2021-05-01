@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerVendas">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,15 +19,19 @@
       </ImageView>
       <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Início" />
-          <Menu mnemonicParsing="false" text="Vendas">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Cadastrar" />
+          <Menu mnemonicParsing="false" onAction="#irInicial" text="Início" />
+            <Menu mnemonicParsing="false" onAction="#irInicial" text="Vendas">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Nova Venda" />
                   <MenuItem mnemonicParsing="false" text="Historico" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Estoque" />
-            <Menu mnemonicParsing="false" text="Entrada" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" onAction="#irInicial" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" text="Historico" />
+               </items>
+            </Menu>
             <Menu disable="true" mnemonicParsing="false" text="Relatórios">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
@@ -53,93 +57,37 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ChoiceBox fx:id="choiceBoxCopo" layoutX="477.0" layoutY="167.0" prefHeight="25.0" prefWidth="163.0">
+      <ChoiceBox fx:id="choiceBoxCopo" layoutX="459.0" layoutY="167.0" prefHeight="25.0" prefWidth="163.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxCreme" layoutX="477.0" layoutY="208.0" prefHeight="25.0" prefWidth="163.0">
+      <ChoiceBox fx:id="choiceBoxCreme" layoutX="459.0" layoutY="208.0" prefHeight="25.0" prefWidth="163.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxAcai" layoutX="477.0" layoutY="246.0" prefHeight="25.0" prefWidth="163.0">
+      <ChoiceBox fx:id="choiceBoxAcai" layoutX="459.0" layoutY="246.0" prefHeight="25.0" prefWidth="163.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxCobertura" layoutX="477.0" layoutY="285.0" prefHeight="25.0" prefWidth="163.0">
+      <ChoiceBox fx:id="choiceBoxCobertura" layoutX="459.0" layoutY="285.0" prefHeight="25.0" prefWidth="163.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxRe1" layoutX="477.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe1" layoutX="459.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="30.0" fitWidth="200.0" layoutX="348.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Images/ButtonCadastrar.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="buttonHistoricoVendas" fitHeight="30.0" fitWidth="200.0" layoutX="512.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Images/ButtonHistorico.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Label layoutX="62.0" layoutY="110.0" text="Tela de Vendas">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="350.0" layoutY="170.0" text="Tamanho do Copo:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="425.0" layoutY="211.0" text="Creme:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="388.0" layoutY="249.0" text="Tipo de Açaí:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="404.0" layoutY="288.0" text="Cobertura:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="409.0" layoutY="324.0" text="Recheios:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceBoxRe2" layoutX="549.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe2" layoutX="531.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxRe3" layoutX="622.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxRe6" disable="true" layoutX="622.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ChoiceBox>
-      <ChoiceBox fx:id="choiceBoxRe5" disable="true" layoutX="549.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+      <ChoiceBox fx:id="choiceBoxRe3" layoutX="604.0" layoutY="322.0" prefHeight="25.0" prefWidth="65.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -149,5 +97,61 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ChoiceBox>
+      <ChoiceBox fx:id="choiceBoxRe5" disable="true" layoutX="549.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ChoiceBox fx:id="choiceBoxRe6" disable="true" layoutX="622.0" layoutY="356.0" opacity="0.0" prefHeight="25.0" prefWidth="65.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <ImageView fx:id="buttonHistoricoVendas" fitHeight="30.0" fitWidth="200.0" layoutX="427.0" layoutY="426.0" onMouseClicked="#irHistorico" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ButtonHistorico.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="30.0" fitWidth="200.0" layoutX="427.0" layoutY="391.0" onMouseClicked="#irConfirmar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ButtonNovaVenda.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="332.0" layoutY="170.0" text="Tamanho do Copo:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="211.0" text="Creme:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="249.0" text="Tipo de Açaí:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="386.0" layoutY="288.0" text="Cobertura:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="324.0" text="Recheios:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="110.0" text="Tela de Vendas">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

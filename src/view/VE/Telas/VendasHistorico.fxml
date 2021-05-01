@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerHistorico">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -53,7 +53,7 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonBuscar" fitHeight="30.0" fitWidth="147.0" layoutX="142.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonBuscar" fitHeight="30.0" fitWidth="147.0" layoutX="142.0" layoutY="400.0" onMouseClicked="#buscar" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -61,15 +61,15 @@
             <Image url="@../Images/ButtonBuscar.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonVoltar" fitHeight="30.0" fitWidth="200.0" layoutX="141.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonVoltar" fitHeight="30.0" fitWidth="200.0" layoutX="142.0" layoutY="435.0" onMouseClicked="#limpar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/ButtonVoltar.png" />
+            <Image url="@../Images/ButtonLimpar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="62.0" layoutY="110.0" text="Tela de Vendas">
+      <Label layoutX="62.0" layoutY="110.0" text="Historico de Vendas">
          <font>
             <Font size="23.0" />
          </font>
@@ -104,7 +104,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="215.0" layoutY="172.0" />
+      <TextField fx:id="textFieldNu" layoutX="215.0" layoutY="172.0" />
       <TextField fx:id="textFieldCop" layoutX="215.0" layoutY="205.0" />
       <TextField fx:id="textFieldDataIn" layoutX="215.0" layoutY="239.0" />
       <TextField fx:id="textFieldDataFi" layoutX="215.0" layoutY="274.0" />
@@ -117,5 +117,13 @@
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
+      <ImageView fx:id="buttonVoltar1" fitHeight="30.0" fitWidth="200.0" layoutX="142.0" layoutY="471.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../Images/ButtonVoltar.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

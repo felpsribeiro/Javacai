@@ -9,24 +9,27 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerInicial">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="960.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Background.png" />
          </image>
       </ImageView>
       <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Início" />
+          <Menu disable="true" mnemonicParsing="false" text="Início" />
           <Menu mnemonicParsing="false" text="Vendas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Historico" />
+              <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Estoque" />
-            <Menu mnemonicParsing="false" text="Entrada" />
+          <Menu mnemonicParsing="false" onAction="#irEstoque" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
+               </items></Menu>
             <Menu disable="true" mnemonicParsing="false" text="Relatórios">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
@@ -47,7 +50,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <ImageView fx:id="imageVenda" fitHeight="398.0" fitWidth="274.0" layoutX="46.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageVenda" fitHeight="398.0" fitWidth="274.0" layoutX="46.0" layoutY="125.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageVendas.png" />
          </image>
@@ -55,7 +58,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="imageEstoque" fitHeight="185.0" fitWidth="274.0" layoutX="344.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageEstoque" fitHeight="185.0" fitWidth="274.0" layoutX="344.0" layoutY="125.0" onMouseClicked="#irEstoque" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageEstoque.png" />
          </image>
@@ -63,7 +66,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="ImageEntrada" fitHeight="235.0" fitWidth="274.0" layoutX="344.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageEntrada" fitHeight="235.0" fitWidth="274.0" layoutX="344.0" layoutY="327.0" onMouseClicked="#irEntrada" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageEntrada.png" />
          </image>

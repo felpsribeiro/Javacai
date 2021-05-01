@@ -48,53 +48,80 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="40.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="42.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="535.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="439.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/ButtonPesquisar.png" />
+            <Image url="@../Images/ButtonVoltar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="62.0" layoutY="110.0" text="Entrada">
+      <Label layoutX="62.0" layoutY="110.0" text="Cadastro de item">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="73.0" layoutY="174.0" text="ID:" textAlignment="RIGHT">
+      <Label layoutX="80.0" layoutY="175.0" text="Nome:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="258.0" layoutY="175.0" text="ou Nome:" textAlignment="RIGHT">
+      <Label layoutX="300.0" layoutY="175.0" text="Tipo:" textAlignment="RIGHT">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="99.0" layoutY="172.0">
+      <TextField layoutX="130.0" layoutY="172.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <TextField layoutX="329.0" layoutY="172.0">
+      <TextField layoutX="340.0" layoutY="172.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Separator layoutX="45.0" layoutY="219.0" prefHeight="4.0" prefWidth="863.0" />
-      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="697.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="438.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <image>
-            <Image url="@../Images/ButtonCadastrarNovo.png" />
+            <Image url="@../Images/ButtonCadastrar.png" />
          </image>
       </ImageView>
-      <ListView layoutX="73.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="511.0" layoutY="174.0" prefHeight="20.0" prefWidth="196.0" text="Unidade de Medida da Entrada:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="380.0" layoutY="216.0" prefHeight="20.0" prefWidth="318.0" text="Proporção da Porção de Saída para Un. de Entrada:" textAlignment="RIGHT" textOverrun="CLIP">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="206.0" layoutY="214.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ChoiceBox layoutX="717.0" layoutY="172.0" prefWidth="150.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ChoiceBox>
+      <Label layoutX="80.0" layoutY="217.0" text="Quantidade Inicial:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="701.0" layoutY="215.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
    </children>
 </Pane>

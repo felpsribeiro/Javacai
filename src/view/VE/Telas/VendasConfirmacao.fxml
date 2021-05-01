@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerConfirmacao">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -53,48 +53,56 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="533.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonHistoricoVendas" fitHeight="30.0" fitWidth="200.0" layoutX="427.0" layoutY="350.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/ButtonPesquisar.png" />
+            <Image url="@../Images/ButtonVoltar.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="62.0" layoutY="110.0" text="Entrada">
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="30.0" fitWidth="200.0" layoutX="427.0" layoutY="315.0" onMouseClicked="#irConfirmar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/ButtonConfirmar.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="360.0" layoutY="171.0" text="Tamanho do Copo:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="435.0" layoutY="197.0" text="Creme:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="395.0" layoutY="223.0" text="Tipo de Açaí:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="414.0" layoutY="248.0" text="Cobertura:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="276.0" text="Recheios:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="110.0" text="Tela de Vendas">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="174.0" text="ID:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="278.0" layoutY="175.0" text="ou Nome:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="119.0" layoutY="172.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="349.0" layoutY="172.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Separator layoutX="45.0" layoutY="219.0" prefHeight="4.0" prefWidth="863.0" />
-      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="697.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <image>
-            <Image url="@../Images/ButtonCadastrarNovo.png" />
-         </image>
-      </ImageView>
-      <ListView layoutX="73.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="label1" layoutX="490.0" layoutY="173.0" text="Label" />
+      <Label fx:id="label2" layoutX="490.0" layoutY="199.0" text="Label" />
+      <Label fx:id="label3" layoutX="490.0" layoutY="225.0" text="Label" />
+      <Label fx:id="label4" layoutX="490.0" layoutY="250.0" text="Label" />
+      <Label fx:id="label5" layoutX="490.0" layoutY="278.0" text="Label" />
    </children>
 </Pane>

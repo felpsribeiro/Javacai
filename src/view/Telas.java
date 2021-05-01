@@ -9,7 +9,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Telas extends Application {
-	private static Stage primaryStage;
 	
 	public static void mensagemInfo(String m) {
 		Alert a = new Alert(AlertType.INFORMATION);
@@ -27,6 +26,8 @@ public class Telas extends Application {
 		launch();
 	}
 	
+	private static Stage primaryStage;
+	
 	public Stage getPrimaryStage() {
 		return primaryStage;
 	}
@@ -34,7 +35,7 @@ public class Telas extends Application {
 	public void setPrimaryStage(Stage primaryStage) {
 		Telas.primaryStage = primaryStage;
 	}
-
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		setPrimaryStage(primaryStage);
@@ -54,9 +55,26 @@ public class Telas extends Application {
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);
 	}
+	public static void telaHistorico() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/VendasHistorico.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
+	public static void telaConfirmacao() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/VendasConfirmacao.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
 	
 	public static void telaEstoque() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Estoque.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
+	public static void telaEntrada() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Entrada.fxml"));
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);
 	}
