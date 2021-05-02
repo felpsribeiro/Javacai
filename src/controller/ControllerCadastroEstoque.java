@@ -1,32 +1,19 @@
 package controller;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import view.Telas;
 
-public class ControllerConfirmacao {
-	@FXML Label label1;
-	@FXML Label label2;
-	@FXML Label label3;
-	@FXML Label label4;
-	@FXML Label label5;
+public class ControllerCadastroEstoque {
 	
-	//mostrar os text dos label
+	public void cadastrar() {
+		//cadastrar no BD
+	}
 	
-	public void irConfirmar() {
-		//salvar no BD o pedido
-		//se a venda for ok
-		Telas.mensagemInfo("Venda salva");
-		
-		//se não
-		 //mensagemErro("Não foi possivel salvar a venda");
-		
+	public void irEntrada() {
 		try {
-			Telas.telaVendas();
+			Telas.telaEntrada();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void irInicial() {
@@ -53,14 +40,6 @@ public class ControllerConfirmacao {
 		}
 	}
 		
-	public void irEntrada() {
-		try {
-			Telas.telaEntrada();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	public void irEstoque() {
 		try {
 			Telas.telaEstoque();
@@ -68,5 +47,4 @@ public class ControllerConfirmacao {
 			e.printStackTrace();
 		}
 	}
-	
 }

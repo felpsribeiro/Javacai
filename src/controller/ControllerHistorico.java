@@ -33,4 +33,28 @@ public class ControllerHistorico {
 			e.printStackTrace();
 		}
 	}
+	
+	public void irInicial() {
+		try {
+			Telas.telaInicial();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irEntrada() {
+		try {
+			Telas.telaEntrada();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irEstoque() {
+		try {
+			Telas.telaEstoque();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
