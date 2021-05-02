@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
 import java.sql.Types;
+import java.time.Instant;
 import java.util.Calendar;
 
 import model.VO.ItemVO;
@@ -16,8 +18,8 @@ public class PedidoDAO extends BaseDAO implements PedidoInterDAO{
 	@Override
 	public void cadastrar(PedidoVO pedido) {
 		String sqlInsert = "insert into pedidos (copo_id, creme_id, acai_id, "
-				+ "recheio1_id, recheio2_id, recheio3_id, cobertura_id, preco) "
-				+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "recheio1_id, recheio2_id, recheio3_id, cobertura_id, preco, datapedido, horariopedido) "
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement ptst;
 		
 		try {
@@ -68,6 +70,13 @@ public class PedidoDAO extends BaseDAO implements PedidoInterDAO{
 			}
 			
 			ptst.setDouble(8, pedido.getPreco());
+			
+			Instant instant = Instant.now();
+			Date date = new Date(instant.toEpochMilli());
+			ptst.setDate(9, date);
+	
+			Time time = new Time(instant.toEpochMilli());
+			ptst.setTime(10, time);
 			
 			int affectedRolls = ptst.executeUpdate();
 			

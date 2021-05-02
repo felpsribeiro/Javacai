@@ -81,6 +81,42 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 	}
 	
 	@Override
+	public ResultSet buscarPorId(ItemVO item) {
+		String sqlSearchById = "select * from itens where id = ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = getConnection().prepareStatement(sqlSearchById);
+			ptst.setLong(1, item.getId());
+			rs = ptst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
+	
+	@Override
+	public ResultSet buscarPorNome(ItemVO item) {
+		String sqlSearchById = "select * from itens where nome like ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = getConnection().prepareStatement(sqlSearchById);
+			ptst.setString(1, item.getNome() + "%");
+			rs = ptst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs;
+	}
+	
+	@Override
 	public ResultSet listar() {
 		String sqlSelect = "select * from itens";
 		PreparedStatement ptst;
@@ -217,4 +253,6 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 			e.printStackTrace();
 		}
 	}
+
+	
 }
