@@ -27,6 +27,14 @@ public class ControllerVendas {
 		}
 	}
 	
+	public void irInicial() {
+		try {
+			Telas.telaInicial();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void irHistorico() {
 		try {
 			Telas.telaHistorico();
@@ -35,11 +43,20 @@ public class ControllerVendas {
 		}
 	}
 	
-	public void irInicial() {
+	public void irEntrada() {
 		try {
-			Telas.telaInicial();
+			Telas.telaEntrada();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void irEstoque() {
+		try {
+			Telas.telaEstoque();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

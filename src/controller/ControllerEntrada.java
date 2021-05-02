@@ -2,31 +2,33 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import view.Telas;
 
-public class ControllerConfirmacao {
-	@FXML Label label1;
-	@FXML Label label2;
-	@FXML Label label3;
-	@FXML Label label4;
-	@FXML Label label5;
+public class ControllerEntrada {
 	
-	//mostrar os text dos label
+	@FXML TextField textFieldId;
+	@FXML TextField textFieldNome;
+	@FXML Label	label1;
+	@FXML Label	label2;
+	@FXML Label	label3;
+	@FXML Label	label4;
+	@FXML Label	label5;
 	
-	public void irConfirmar() {
-		//salvar no BD o pedido
-		//se a venda for ok
-		Telas.mensagemInfo("Venda salva");
-		
-		//se não
-		 //mensagemErro("Não foi possivel salvar a venda");
-		
+	public void pesquisar() {
+		//pegar os textos e pesquisar	
+	}
+	
+	public void cadastrar() {
+		//
+	}
+	
+	public void irCadastrar() {
 		try {
-			Telas.telaVendas();
+			Telas.telaCadastroEstoque();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void irInicial() {
@@ -53,14 +55,6 @@ public class ControllerConfirmacao {
 		}
 	}
 		
-	public void irEntrada() {
-		try {
-			Telas.telaEntrada();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	public void irEstoque() {
 		try {
 			Telas.telaEstoque();
@@ -68,5 +62,4 @@ public class ControllerConfirmacao {
 			e.printStackTrace();
 		}
 	}
-	
 }

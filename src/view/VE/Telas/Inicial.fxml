@@ -25,7 +25,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" onAction="#irEstoque" text="Estoque">
+          <Menu mnemonicParsing="false" text="Estoque">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
                   <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />

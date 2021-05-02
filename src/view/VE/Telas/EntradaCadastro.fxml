@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerCadastroEstoque">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,15 +19,21 @@
       </ImageView>
       <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Início" />
+          <Menu mnemonicParsing="false" text="Início">
+               <items>
+              <MenuItem mnemonicParsing="false" onAction="#irInicial" text="Início" />
+               </items></Menu>
           <Menu mnemonicParsing="false" text="Vendas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Historico" />
+                  <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Estoque" />
-            <Menu mnemonicParsing="false" text="Entrada" />
+          <Menu mnemonicParsing="false" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
+               </items></Menu>
             <Menu disable="true" mnemonicParsing="false" text="Relatórios">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
@@ -53,7 +59,7 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="439.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="439.0" layoutY="316.0" onMouseClicked="#irEntrada" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ButtonVoltar.png" />
          </image>
@@ -86,7 +92,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="438.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="438.0" layoutY="275.0" onMouseClicked="#cadastrar" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

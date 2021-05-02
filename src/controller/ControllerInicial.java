@@ -21,7 +21,7 @@ public class ControllerInicial {
 		}
 	}
 	
-	public void irEstoque(ActionEvent event) {
+	public void irEstoque() {
 		try {
 			Telas.telaEstoque();
 		} catch (Exception e) {

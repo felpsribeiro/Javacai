@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerEntrada">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,15 +19,21 @@
       </ImageView>
       <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Início" />
+          <Menu mnemonicParsing="false" text="Início">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irInicial" text="Início" />
+               </items></Menu>
           <Menu mnemonicParsing="false" text="Vendas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Historico" />
+              <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Estoque" />
-            <Menu mnemonicParsing="false" text="Entrada" />
+          <Menu mnemonicParsing="false" text="Estoque">
+               <items>
+                  <MenuItem disable="true" mnemonicParsing="false" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
+               </items></Menu>
             <Menu disable="true" mnemonicParsing="false" text="Relatórios">
                <items>
                   <MenuItem mnemonicParsing="false" text="About" />
@@ -48,12 +54,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="40.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="48.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="533.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonCadastrarVenda" fitHeight="34.0" fitWidth="149.0" layoutX="533.0" layoutY="170.0" onMouseClicked="#pesquisar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ButtonPesquisar.png" />
          </image>
@@ -76,18 +82,18 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="119.0" layoutY="172.0">
+      <TextField fx:id="textFieldId" layoutX="119.0" layoutY="172.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <TextField layoutX="349.0" layoutY="172.0">
+      <TextField fx:id="textFieldNome" layoutX="349.0" layoutY="172.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Separator layoutX="45.0" layoutY="219.0" prefHeight="4.0" prefWidth="863.0" />
-      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="697.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+      <Separator layoutX="57.0" layoutY="219.0" prefHeight="5.0" prefWidth="837.0" />
+      <ImageView fx:id="buttonCadastrarVenda1" fitHeight="34.0" fitWidth="149.0" layoutX="697.0" layoutY="170.0" onMouseClicked="#irCadastrar" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -95,6 +101,54 @@
             <Image url="@../Images/ButtonCadastrarNovo.png" />
          </image>
       </ImageView>
-      <ListView layoutX="73.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="420.0" layoutY="258.0" text="Nome:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="238.0" text="ID:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="370.0" layoutY="278.0" text="Un de Medida:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="349.0" layoutY="298.0" text="Quantidade Atual:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="318.0" text="Ultima Entrada:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="label1" layoutX="484.0" layoutY="240.0" />
+      <Label fx:id="label2" layoutX="484.0" layoutY="260.0" />
+      <Label fx:id="label3" layoutX="484.0" layoutY="280.0" />
+      <Label fx:id="label4" layoutX="484.0" layoutY="300.0" />
+      <Label fx:id="label5" layoutX="484.0" layoutY="320.0" />
+      <Label layoutX="290.0" layoutY="372.0" text="Quantidade da Entrada:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldId1" layoutX="451.0" layoutY="370.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Separator layoutX="57.0" layoutY="349.0" prefHeight="5.0" prefWidth="837.0" />
+      <ImageView fx:id="buttonCadastrarVenda2" fitHeight="34.0" fitWidth="149.0" layoutX="372.0" layoutY="413.0" onMouseClicked="#cadastrar" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../Images/ButtonCadastrar.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
