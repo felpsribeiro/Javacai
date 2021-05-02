@@ -1,15 +1,21 @@
 package model.VO;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class PedidoVO {
 	private Long id;
 	private ItemVO copo;
 	private ItemVO creme;
 	private ItemVO acai;
-	private List<ItemVO> recheios;
+	private ArrayList<ItemVO> recheios;
 	private ItemVO cobertura;
 	private double preco;
+	private Calendar dataPedido;
+	
+	PedidoVO(){
+		recheios = new ArrayList<ItemVO>(3);
+	}
 	
 	public Long getId() {
 		return id;
@@ -48,10 +54,10 @@ public class PedidoVO {
 			System.out.println("Açaí inválido");
 	}
 	
-	public List<ItemVO> getRecheios() {
+	public ArrayList<ItemVO> getRecheios() {
 		return recheios;
 	}
-	public void setRecheios(List<ItemVO> recheios) {
+	public void setRecheios(ArrayList<ItemVO> recheios) {
 		if(recheios != null)
 			this.recheios = recheios;
 		else
@@ -73,5 +79,14 @@ public class PedidoVO {
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	public Calendar getDataPedido() {
+		return dataPedido;
+	}
+
+	public void setDataPedido(Calendar dataPedido) {
+		if(dataPedido != null)
+			this.dataPedido = dataPedido;
 	}
 }

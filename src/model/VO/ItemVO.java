@@ -5,7 +5,7 @@ public class ItemVO {
 	private String nome;
 	private TipoItem tipoItem;
 	private double quantidade;
-	private double tamanhoPorcao;
+	private double porcao;
 	
 	public Long getId() {
 		return id;
@@ -39,11 +39,11 @@ public class ItemVO {
 		this.quantidade = quantidade;
 	}
 	
-	public double getTamanhoPorcao() {
-		return tamanhoPorcao;
+	public double getPorcao() {
+		return porcao;
 	}
-	public void setTamanhoPorcao(double tamanhoPorcao) {
-		this.tamanhoPorcao = tamanhoPorcao;
+	public void setPorcao(double tamanhoPorcao) {
+		this.porcao = tamanhoPorcao;
 	}
 	
 	
