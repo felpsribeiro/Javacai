@@ -118,13 +118,13 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 	
 	@Override
 	public ResultSet buscarPorNome(ItemVO item) {
-		String sqlSearchById = "select * from itens where nome like ?";
+		String sqlSearchById = "select * from itens where nome like ?;";
 		PreparedStatement ptst;
 		ResultSet rs = null;
 		
 		try {
 			ptst = getConnection().prepareStatement(sqlSearchById);
-			ptst.setString(1, item.getNome() + "%");
+			ptst.setString(1, "%" + item.getNome() + "%");
 			rs = ptst.executeQuery();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

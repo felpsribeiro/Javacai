@@ -1,6 +1,5 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import view.Telas;
 
 public class ControllerInicial {

@@ -29,50 +29,46 @@ public class ItemBO implements ItemInterBO{
 	}
 	
 	@Override
-	public void atualizarQuantidade(ItemVO item) {
+	public void adicionarItem(ItemVO item) {
+		double aux;
+		
+		aux = buscarPorId(item).getQuantidade();
+		aux = aux + item.getQuantidade();
+		item.setQuantidade(aux);
+		
 		itemDao.atualizarQuantidade(item);
 	}
 	
-	public void retirarDoEstoque(PedidoVO pedido) {
+	@Override
+	public void retirarItem(ItemVO item) {
 		double aux;
-		ItemVO item;
 		
-		//retirar o Copo
-		item = pedido.getCopo();
 		aux = buscarPorId(item).getQuantidade();		//1 pacote de orio ~> 4 porções
 		aux = aux - (1 / item.getPorcao());				//0,25 pacotes de orio ~> 1 porção
 		item.setQuantidade(aux);
-		atualizarQuantidade(item);
+		
+		itemDao.atualizarQuantidade(item);
+	}
+	
+	@Override
+	public void retirarPedidoDoEstoque(PedidoVO pedido) {
+		
+		//retirar o Copo
+		retirarItem(pedido.getCopo());
 		
 		//retirar o Acai
-		item = pedido.getAcai();
-		aux = buscarPorId(item).getQuantidade();
-		aux = aux - (1 / item.getPorcao());
-		item.setQuantidade(aux);
-		atualizarQuantidade(item);
+		retirarItem(pedido.getAcai());
 		
 		//retirar o Creme
-		item = pedido.getCreme();
-		aux = buscarPorId(item).getQuantidade();
-		aux = aux - (1 / item.getPorcao());
-		item.setQuantidade(aux);
-		atualizarQuantidade(item);
+		retirarItem(pedido.getCreme());
 		
 		//retirar a Cobertura
-		item = pedido.getCobertura();
-		aux = buscarPorId(item).getQuantidade();
-		aux = aux - (1 / item.getPorcao());
-		item.setQuantidade(aux);
-		atualizarQuantidade(item);
+		retirarItem(pedido.getCobertura());
 		
 		//retirar os Recheios
 		for(ItemVO recheio : pedido.getRecheios()) {
-			item = recheio;
-			aux = buscarPorId(item).getQuantidade();
-			aux = aux - (1 / item.getPorcao());
-			item.setQuantidade(aux);
-			atualizarQuantidade(item);
-		}		
+			retirarItem(recheio);
+		}	
 	}
 	
 	@Override
@@ -87,6 +83,7 @@ public class ItemBO implements ItemInterBO{
 				resultado.setTipoItem(TipoItem.values()[rs.getInt("tipoitem")]);
 				resultado.setQuantidade(rs.getDouble("quantidade"));
 				resultado.setPorcao(rs.getDouble("porcao"));
+				resultado.setUnidadeDeEntrada(rs.getString("unidadedeentrada"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -109,6 +106,7 @@ public class ItemBO implements ItemInterBO{
 				resultado.setTipoItem(TipoItem.values()[rs.getInt("tipoitem")]);
 				resultado.setQuantidade(rs.getDouble("quantidade"));
 				resultado.setPorcao(rs.getDouble("porcao"));
+				resultado.setUnidadeDeEntrada(rs.getString("unidadedeentrada"));
 				
 				lista.add(resultado);
 			}

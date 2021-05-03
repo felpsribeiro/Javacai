@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import model.BO.ItemBO;
 import model.BO.PedidoBO;
 import model.VO.ItemVO;
-import model.VO.PedidoVO;
 import view.Telas;
 
 public class ControllerConfirmacao implements Initializable {
@@ -43,7 +42,7 @@ public class ControllerConfirmacao implements Initializable {
 	public void irConfirmar() {
 		try {
 			peBO.cadastrar(ControllerVendas.pedido);
-			itBO.retirarDoEstoque(ControllerVendas.pedido);
+			itBO.retirarPedidoDoEstoque(ControllerVendas.pedido);
 			Telas.mensagemInfo("Venda salva com sucesso.");
 			
 			try {

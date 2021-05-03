@@ -121,7 +121,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="367.0" layoutY="318.0" text="Ultima Entrada:" textAlignment="RIGHT">
+      <Label layoutX="367.0" layoutY="318.0" text="Ultima Entrada:" textAlignment="RIGHT" visible="false">
          <font>
             <Font size="14.0" />
          </font>
@@ -136,7 +136,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldId1" layoutX="451.0" layoutY="370.0">
+      <TextField fx:id="textFieldEnt" layoutX="451.0" layoutY="370.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
