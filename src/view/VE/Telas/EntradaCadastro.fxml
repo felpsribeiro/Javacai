@@ -54,7 +54,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <ImageView fitHeight="419.0" fitWidth="926.0" layoutX="42.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="textFieldTipo" fitHeight="419.0" fitWidth="926.0" layoutX="42.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Div.png" />
          </image>
@@ -82,12 +82,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="130.0" layoutY="172.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <TextField layoutX="340.0" layoutY="172.0">
+      <TextField fx:id="textFieldNome" layoutX="130.0" layoutY="172.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -105,29 +100,35 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="380.0" layoutY="216.0" prefHeight="20.0" prefWidth="318.0" text="Proporção da Porção de Saída para Un. de Entrada:" textAlignment="RIGHT" textOverrun="CLIP">
+      <Label layoutX="439.0" layoutY="218.0" prefHeight="20.0" prefWidth="209.0" text="Porção de Saída / Un. de Entrada:" textAlignment="RIGHT" textOverrun="CLIP">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="206.0" layoutY="214.0">
+      <TextField fx:id="textFieldQuan" layoutX="275.0" layoutY="215.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <ChoiceBox layoutX="717.0" layoutY="172.0" prefWidth="150.0">
+      <Label layoutX="149.0" layoutY="218.0" text="Quantidade Inicial:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldPor" layoutX="658.0" layoutY="215.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="textFieldUn" layoutX="716.0" layoutY="173.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ChoiceBox fx:id="choice" layoutX="341.0" layoutY="172.0" prefWidth="150.0">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></ChoiceBox>
-      <Label layoutX="80.0" layoutY="217.0" text="Quantidade Inicial:" textAlignment="RIGHT">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="701.0" layoutY="215.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
          </cursor>
-      </TextField>
+      </ChoiceBox>
    </children>
 </Pane>
