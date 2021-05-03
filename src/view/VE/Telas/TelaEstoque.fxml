@@ -103,17 +103,14 @@
          </cursor>
       </TextField>
       <Separator layoutX="86.0" layoutY="219.0" prefHeight="3.0" prefWidth="787.0" />
-      <TableView layoutX="85.0" layoutY="238.0" prefHeight="266.0" prefWidth="787.0">
+      <TableView fx:id="tabela" layoutX="85.0" layoutY="238.0" prefHeight="266.0" prefWidth="787.0">
         <columns>
-          <TableColumn prefWidth="40.0" text="ID" />
-          <TableColumn prefWidth="50.0" text="Nome" />
-            <TableColumn prefWidth="50.0" text="Tipo" />
-            <TableColumn prefWidth="95.0" text="Un de Entrada" />
-            <TableColumn prefWidth="125.0" text="Quantidade Entrada" />
-            <TableColumn prefWidth="75.0" text="Un de Saída" />
-            <TableColumn prefWidth="125.0" text="Quantidade Saída" />
-            <TableColumn prefWidth="110.0" text="Ultima Entrada" />
-            <TableColumn prefWidth="110.0" text="Ultima Saída" />
+          <TableColumn fx:id="colunaId" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="colunaNome" prefWidth="346.0" text="Nome" />
+            <TableColumn fx:id="colunaTipo" prefWidth="104.0" text="Tipo" />
+            <TableColumn fx:id="colunaQuantidade" text="Quantidade" />
+            <TableColumn fx:id="colunaPorcao" prefWidth="141.0" text="Tamanho da porção" />
+            <TableColumn fx:id="colunaUnidade" prefWidth="75.0" text="Unidade" />
         </columns>
          <cursor>
             <Cursor fx:constant="CROSSHAIR" />

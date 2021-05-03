@@ -133,6 +133,7 @@ public class ItemBO implements ItemInterBO{
 				item.setTipoItem(TipoItem.values()[rs.getInt("tipoitem")]);
 				item.setQuantidade(rs.getDouble("quantidade"));
 				item.setPorcao(rs.getDouble("porcao"));
+				item.setUnidadeDeEntrada(rs.getString("unidadedeentrada"));
 				
 				lista.add(item);
 			}

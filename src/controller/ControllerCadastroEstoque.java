@@ -23,7 +23,7 @@ public class ControllerCadastroEstoque implements Initializable {
 	@FXML TextField textFieldUn;
 	@FXML TextField textFieldQuan;
 	@FXML TextField textFieldPor;
-	private List<TipoItem> listaTipos;
+	private TipoItem[] listaTipos;
 	private ObservableList<String> listaStgTipos;
 	ItemBO itBO = new ItemBO();
 	ItemVO item = new ItemVO();
@@ -35,8 +35,14 @@ public class ControllerCadastroEstoque implements Initializable {
 	
 	private void atualizar() {
 		if(choice != null) {
-				
-		
+			List<String> stList = new ArrayList<String>();
+			listaTipos = TipoItem.values();
+			for(int i = 0; i < listaTipos.length; ++i) {
+				stList.add(listaTipos[i].toString());
+			}
+			listaStgTipos = FXCollections.observableArrayList(stList);
+			
+			choice.setItems(listaStgTipos);
 		}
 		
 	}
@@ -46,7 +52,7 @@ public class ControllerCadastroEstoque implements Initializable {
 		item.setNome(textFieldNome.getText());
 		
 		int index = choice.getSelectionModel().getSelectedIndex();
-		item.setTipoItem(listaTipos.get(index));
+		item.setTipoItem(listaTipos[index]);
 		
 		item.setUnidadeDeEntrada(textFieldUn.getText());
 		item.setQuantidade(Double.parseDouble(textFieldQuan.getText()));
