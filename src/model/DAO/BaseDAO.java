@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import BD.BD;
+
 public abstract class BaseDAO {
 	private static Connection conn = null;
 	private static final String url = "jdbc:postgresql://localhost:5432/Javacai";
 	private static final String login = "postgres";
-	private static final String senha = "";	
+	private static final String senha = BD.PASSWORD_POSTGRE;
 	
 	public Connection getConnection() {
 		if(conn == null) {

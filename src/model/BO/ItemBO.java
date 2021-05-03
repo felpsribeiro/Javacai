@@ -7,6 +7,7 @@ import java.util.List;
 
 import model.DAO.ItemDAO;
 import model.VO.ItemVO;
+import model.VO.PedidoVO;
 import model.VO.TipoItem;
 
 public class ItemBO implements ItemInterBO{
@@ -28,6 +29,53 @@ public class ItemBO implements ItemInterBO{
 	}
 	
 	@Override
+	public void atualizarQuantidade(ItemVO item) {
+		itemDao.atualizarQuantidade(item);
+	}
+	
+	public void retirarDoEstoque(PedidoVO pedido) {
+		double aux;
+		ItemVO item;
+		
+		//retirar o Copo
+		item = pedido.getCopo();
+		aux = buscarPorId(item).getQuantidade();		//1 pacote de orio ~> 4 porções
+		aux = aux - (1 / item.getPorcao());				//0,25 pacotes de orio ~> 1 porção
+		item.setQuantidade(aux);
+		atualizarQuantidade(item);
+		
+		//retirar o Acai
+		item = pedido.getAcai();
+		aux = buscarPorId(item).getQuantidade();
+		aux = aux - (1 / item.getPorcao());
+		item.setQuantidade(aux);
+		atualizarQuantidade(item);
+		
+		//retirar o Creme
+		item = pedido.getCreme();
+		aux = buscarPorId(item).getQuantidade();
+		aux = aux - (1 / item.getPorcao());
+		item.setQuantidade(aux);
+		atualizarQuantidade(item);
+		
+		//retirar a Cobertura
+		item = pedido.getCobertura();
+		aux = buscarPorId(item).getQuantidade();
+		aux = aux - (1 / item.getPorcao());
+		item.setQuantidade(aux);
+		atualizarQuantidade(item);
+		
+		//retirar os Recheios
+		for(ItemVO recheio : pedido.getRecheios()) {
+			item = recheio;
+			aux = buscarPorId(item).getQuantidade();
+			aux = aux - (1 / item.getPorcao());
+			item.setQuantidade(aux);
+			atualizarQuantidade(item);
+		}		
+	}
+	
+	@Override
 	public ItemVO buscarPorId(ItemVO item) {
 		ItemVO resultado = new ItemVO();
 		ResultSet rs = itemDao.buscarPorId(item);
@@ -41,7 +89,6 @@ public class ItemBO implements ItemInterBO{
 				resultado.setPorcao(rs.getDouble("porcao"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -101,7 +148,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarCopos() {
-List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new ArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCopos();
 		
@@ -127,7 +174,7 @@ List<ItemVO> lista = new ArrayList<ItemVO>();
 
 	@Override
 	public List<ItemVO> listarCremes() {
-List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new ArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCremes();
 		
@@ -153,7 +200,7 @@ List<ItemVO> lista = new ArrayList<ItemVO>();
 
 	@Override
 	public List<ItemVO> listarAcais() {
-List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new ArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarAcais();
 		
@@ -179,7 +226,7 @@ List<ItemVO> lista = new ArrayList<ItemVO>();
 
 	@Override
 	public List<ItemVO> listarRecheios() {
-List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new ArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarRecheios();
 		
@@ -205,7 +252,7 @@ List<ItemVO> lista = new ArrayList<ItemVO>();
 
 	@Override
 	public List<ItemVO> listarCoberturas() {
-List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new ArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCoberturas();
 		
@@ -238,7 +285,4 @@ List<ItemVO> lista = new ArrayList<ItemVO>();
 	public void atualizarPreco(ItemVO copo, double preco) {
 		itemDao.atualizarPreco(copo, preco);
 	}
-
-	
-
 }

@@ -6,6 +6,7 @@ public class ItemVO {
 	private TipoItem tipoItem;
 	private double quantidade;
 	private double porcao;
+	private String unidadeDeEntrada;
 	
 	public Long getId() {
 		return id;
@@ -44,6 +45,16 @@ public class ItemVO {
 	}
 	public void setPorcao(double tamanhoPorcao) {
 		this.porcao = tamanhoPorcao;
+	}
+	public String getUnidadeDeEntrada() {
+		return unidadeDeEntrada;
+	}
+	public void setUnidadeDeEntrada(String unidadeDeEntrada) {
+		if(unidadeDeEntrada != null && !unidadeDeEntrada.isEmpty()) {
+			this.unidadeDeEntrada = unidadeDeEntrada;
+		} else {
+			System.out.println("Nome inválido");
+		}
 	}
 	
 	

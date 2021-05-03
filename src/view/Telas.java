@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class Telas extends Application {
-	
+		
 	public static void mensagemInfo(String m) {
 		Alert a = new Alert(AlertType.INFORMATION);
 		a.setHeaderText(m);

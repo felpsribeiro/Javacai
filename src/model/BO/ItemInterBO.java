@@ -8,6 +8,7 @@ public interface ItemInterBO {
 	public void cadastrar(ItemVO item);
 	public void excluir(ItemVO item);
 	public void atualizar(ItemVO item);
+	public void atualizarQuantidade(ItemVO item);
 	public ItemVO buscarPorId(ItemVO item);
 	public List<ItemVO> buscarPorNome(ItemVO item);
 	public List<ItemVO> listar();

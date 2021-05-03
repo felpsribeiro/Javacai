@@ -12,7 +12,7 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 	
 	@Override
 	public void cadastrar(ItemVO item){
-		String sqlInsert = "insert into itens (nome, tipoItem, quantidade, porcao) values (?, ?, ?, ?)";
+		String sqlInsert = "insert into itens (nome, tipoItem, quantidade, porcao, unidadedeentrada) values (?, ?, ?, ?, ?)";
 		PreparedStatement ptst;
 		try {
 			ptst = getConnection().prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
@@ -20,6 +20,7 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 			ptst.setInt(2, item.getTipoItem().ordinal());
 			ptst.setDouble(3, item.getQuantidade());
 			ptst.setDouble(4, item.getPorcao());
+			ptst.setString(5, item.getUnidadeDeEntrada());
 			int affectedRolls = ptst.executeUpdate();
 			
 			if (affectedRolls == 0) {
@@ -63,7 +64,8 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 				+ "nome = ?,"
 				+ "tipoItem = ?,"
 				+ "quantidade = ?,"
-				+ "porcao = ?"
+				+ "porcao = ?,"
+				+ "unidadedeentrada = ?"
 				+ " where id = ?;";
 		PreparedStatement ptst;
 		try {
@@ -72,7 +74,23 @@ public class ItemDAO extends BaseDAO implements ItemInterDAO{
 			ptst.setInt(2, item.getTipoItem().ordinal());
 			ptst.setDouble(3, item.getQuantidade());
 			ptst.setDouble(4, item.getPorcao());
-			ptst.setLong(5, item.getId());
+			ptst.setString(5, item.getUnidadeDeEntrada());
+			ptst.setLong(6, item.getId());
+			ptst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void atualizarQuantidade(ItemVO item) {
+		String sqlUpdate = "UPDATE itens SET quantidade= ? WHERE id= ?;";
+		PreparedStatement ptst;
+		try {
+			ptst = getConnection().prepareStatement(sqlUpdate);
+			ptst.setDouble(1, item.getQuantidade());
+			ptst.setLong(2, item.getId());
 			ptst.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

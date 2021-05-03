@@ -8,6 +8,7 @@ public interface ItemInterDAO {
 	public void cadastrar(ItemVO item);
 	public void excluir(ItemVO item);
 	public void atualizar(ItemVO item);
+	public void atualizarQuantidade(ItemVO item);
 	public ResultSet buscarPorId(ItemVO item);
 	public ResultSet buscarPorNome(ItemVO item);
 	public ResultSet listar();
