@@ -239,5 +239,39 @@ public class PedidoDAO extends BaseDAO implements PedidoInterDAO{
 		
 		return preco;
 	}
+
+	@Override
+	public ResultSet buscarPorId(PedidoVO pedido) {
+		String sqlSearch = "select * from pedidos where id = ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = getConnection().prepareStatement(sqlSearch);
+			ptst.setLong(1, pedido.getId());
+			rs = ptst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
+
+	@Override
+	public ResultSet buscarPorCopo(PedidoVO pedido) {
+		String sqlSearch = "select * from pedidos where copo_id = ?";
+		PreparedStatement ptst;
+		ResultSet rs = null;
+		
+		try {
+			ptst = getConnection().prepareStatement(sqlSearch);
+			ptst.setLong(1, pedido.getCopo().getId());
+			rs = ptst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+	}
 	
 }

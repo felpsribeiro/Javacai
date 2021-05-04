@@ -91,37 +91,40 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="76.0" layoutY="241.0" text="Data Inicial da Busca:" textAlignment="RIGHT">
+      <Label disable="true" layoutX="76.0" layoutY="241.0" text="Data Inicial da Busca:" textAlignment="RIGHT" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="277.0" text="Data Final da Busca:" textAlignment="RIGHT">
+      <Label disable="true" layoutX="83.0" layoutY="277.0" text="Data Final da Busca:" textAlignment="RIGHT" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="312.0" text="Horário Inicial da Busca:" textAlignment="RIGHT">
+      <Label disable="true" layoutX="59.0" layoutY="312.0" text="Horário Inicial da Busca:" textAlignment="RIGHT" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="64.0" layoutY="347.0" text="Horário Final da Busca:" textAlignment="RIGHT">
+      <Label disable="true" layoutX="64.0" layoutY="347.0" text="Horário Final da Busca:" textAlignment="RIGHT" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField fx:id="textFieldNu" layoutX="215.0" layoutY="172.0" />
-      <TextField fx:id="textFieldCop" layoutX="215.0" layoutY="205.0" />
-      <TextField fx:id="textFieldDataIn" layoutX="215.0" layoutY="239.0" />
-      <TextField fx:id="textFieldDataFi" layoutX="215.0" layoutY="274.0" />
-      <TextField fx:id="textFieldHoraIn" layoutX="215.0" layoutY="309.0" />
-      <TextField fx:id="textFieldHoraFi" layoutX="215.0" layoutY="344.0" />
+      <TextField fx:id="textFieldDataIn" disable="true" layoutX="215.0" layoutY="239.0" visible="false" />
+      <TextField fx:id="textFieldDataFi" disable="true" layoutX="215.0" layoutY="274.0" visible="false" />
+      <TextField fx:id="textFieldHoraIn" disable="true" layoutX="215.0" layoutY="309.0" visible="false" />
+      <TextField fx:id="textFieldHoraFi" disable="true" layoutX="215.0" layoutY="344.0" visible="false" />
       <Separator layoutX="382.0" layoutY="148.0" orientation="VERTICAL" prefHeight="370.0" prefWidth="1.0" />
-      <TableView layoutX="394.0" layoutY="157.0" prefHeight="355.0" prefWidth="506.0">
+      <TableView fx:id="tabela" layoutX="394.0" layoutY="157.0" prefHeight="355.0" prefWidth="506.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="colunaId" prefWidth="25.0" text="ID" />
+          <TableColumn fx:id="colunaCopo" prefWidth="96.0" text="Copo" />
+            <TableColumn fx:id="colunaCreme" prefWidth="95.0" text="Creme" />
+            <TableColumn fx:id="colunaAcai" prefWidth="89.0" text="Açaí" />
+            <TableColumn fx:id="colunaRecheios" prefWidth="93.0" text="Recheios" />
+            <TableColumn fx:id="colunaCobertura" prefWidth="107.0" text="Cobertura" />
         </columns>
       </TableView>
       <ImageView fx:id="buttonVoltar1" fitHeight="30.0" fitWidth="200.0" layoutX="142.0" layoutY="471.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
@@ -132,5 +135,6 @@
             <Image url="@../Images/ButtonVoltar.png" />
          </image>
       </ImageView>
+      <ChoiceBox fx:id="choiceboxCopo" layoutX="214.0" layoutY="206.0" prefWidth="150.0" />
    </children>
 </Pane>

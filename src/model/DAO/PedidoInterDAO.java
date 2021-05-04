@@ -13,4 +13,6 @@ public interface PedidoInterDAO {
 	public ResultSet listar();
 	public ResultSet buscarPorData(Calendar inicio, Calendar fim);
 	public double buscarPrecoPorCopo(ItemVO copo);
+	public ResultSet buscarPorId(PedidoVO pedido);
+	public ResultSet buscarPorCopo(PedidoVO pedido);
 }

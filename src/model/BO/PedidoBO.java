@@ -144,4 +144,107 @@ public class PedidoBO implements PedidoInterBO{
 		return pedidoDao.buscarPrecoPorCopo(copo);
 	}
 
+	@Override
+	public PedidoVO buscarPorId(PedidoVO pedido) {
+		PedidoVO pedidoR = new PedidoVO();
+		ResultSet rs = pedidoDao.buscarPorId(pedido);
+		ItemVO item = new ItemVO();
+		
+		try {
+			if(rs.next()) {		
+				pedidoR.setId(rs.getLong("id"));
+				item.setId(rs.getLong("copo_id"));
+				pedidoR.setCopo(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("creme_id"));
+				pedidoR.setCreme(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("acai_id"));
+				pedidoR.setAcai(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("cobertura_id"));
+				pedidoR.setCobertura(itemBo.buscarPorId(item));
+				
+				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				item.setId(rs.getLong("recheio1_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				item.setId(rs.getLong("recheio2_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				item.setId(rs.getLong("recheio3_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				pedidoR.setRecheios(listaRecheios);
+				
+				Date date = rs.getDate("datapedido");
+				Time time = rs.getTime("horariopedido");
+				Calendar cal1 = Calendar.getInstance();
+				cal1.setTime(date);
+				Calendar cal2 = Calendar.getInstance();
+				cal2.setTime(time);
+				cal1.set(Calendar.HOUR_OF_DAY, cal2.get(Calendar.HOUR_OF_DAY));
+				cal1.set(Calendar.MINUTE, cal2.get(Calendar.MINUTE));
+				cal1.set(Calendar.SECOND, cal2.get(Calendar.SECOND));
+				pedidoR.setDataPedido(cal1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return pedidoR;
+	}
+
+	@Override
+	public List<PedidoVO> buscarPorCopo(PedidoVO pedido) {
+		List<PedidoVO> lista = new ArrayList<PedidoVO>();
+		ResultSet rs = pedidoDao.buscarPorCopo(pedido);
+		ItemVO item = new ItemVO();
+		
+		try {
+			while(rs.next()) {
+				PedidoVO pedidoR = new PedidoVO();
+				
+				
+				pedidoR.setId(rs.getLong("id"));
+				item.setId(rs.getLong("copo_id"));
+				pedidoR.setCopo(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("creme_id"));
+				pedidoR.setCreme(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("acai_id"));
+				pedidoR.setAcai(itemBo.buscarPorId(item));
+				
+				item.setId(rs.getLong("cobertura_id"));
+				pedidoR.setCobertura(itemBo.buscarPorId(item));
+				
+				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				item.setId(rs.getLong("recheio1_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				item.setId(rs.getLong("recheio2_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				item.setId(rs.getLong("recheio3_id"));
+				listaRecheios.add(itemBo.buscarPorId(item));
+				pedidoR.setRecheios(listaRecheios);
+				
+				Date date = rs.getDate("datapedido");
+				Time time = rs.getTime("horariopedido");
+				Calendar cal1 = Calendar.getInstance();
+				cal1.setTime(date);
+				Calendar cal2 = Calendar.getInstance();
+				cal2.setTime(time);
+				cal1.set(Calendar.HOUR_OF_DAY, cal2.get(Calendar.HOUR_OF_DAY));
+				cal1.set(Calendar.MINUTE, cal2.get(Calendar.MINUTE));
+				cal1.set(Calendar.SECOND, cal2.get(Calendar.SECOND));
+				pedidoR.setDataPedido(cal1);
+				
+				lista.add(pedidoR);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return lista;
+	}
+
 }

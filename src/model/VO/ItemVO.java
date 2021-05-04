@@ -57,5 +57,7 @@ public class ItemVO {
 		}
 	}
 	
-	
+	public String toString() {
+		return this.nome;
+	}
 }

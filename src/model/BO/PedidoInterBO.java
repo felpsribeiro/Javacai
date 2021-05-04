@@ -12,5 +12,7 @@ public interface PedidoInterBO {
 	public void atualizar(PedidoVO pedido);
 	public List<PedidoVO> listar();
 	public List<PedidoVO> buscarPorData(Calendar inicio, Calendar fim);
+	public List<PedidoVO> buscarPorCopo(PedidoVO pedido);
+	public PedidoVO buscarPorId(PedidoVO pedido);
 	public double buscarPrecoPorCopo(ItemVO copo);
 }
