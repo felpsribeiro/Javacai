@@ -75,10 +75,28 @@ public class ControllerEstoque implements Initializable{
 	}
 	
 	public void filtrar() {
-		boolean checkId = textFieldId == null || textFieldId.getText().trim().isEmpty();
-		boolean checkNome = textFieldId == null || textFieldId.getText().trim().isEmpty();
+		itens.clear();
+		
+		ItemVO item = new ItemVO();
+		
+		if(textFieldId != null || !textFieldId.getText().trim().isEmpty()) {
+			item.setId(Long.parseLong(textFieldId.getText()));
+			itens.add(itemBo.buscarPorId(item));
+			if(itens.size() == 0) Telas.mensagemInfo("Sua pesquisa não retornou valor");
+			atualizarTabela();
+			return;
+		}
+		if(textFieldNome != null || !textFieldNome.getText().trim().isEmpty()){
+			item.setNome(textFieldNome.getText());
+			itens.addAll(itemBo.buscarPorNome(item));
+			if(itens.size() == 0) Telas.mensagemInfo("Sua pesquisa não retornou valor");
+			atualizarTabela();
+			return;
+		}
 		
 		
+		itens.addAll(itemBo.listar());
+		atualizarTabela();
 	}
 	
 	public void irInicial() {

@@ -60,6 +60,11 @@ public class ControllerCadastroEstoque implements Initializable {
 		
 		try {
 			itBO.cadastrar(item);
+			textFieldNome.setText("");
+			atualizar();
+			textFieldUn.setText("");
+			textFieldQuan.setText("");
+			textFieldPor.setText("");
 			Telas.mensagemInfo("O item foi cadastrado.");
 		} catch (Exception e){
 			Telas.mensagemErro("Não foi possível realizar o cadastro.");
