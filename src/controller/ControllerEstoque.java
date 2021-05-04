@@ -25,7 +25,7 @@ public class ControllerEstoque implements Initializable{
 	
 	@FXML TextField textFieldId;
 	@FXML TextField textFieldNome;                         
-	@FXML ChoiceBox choiceBoxAcai;
+	@FXML ChoiceBox<TipoItem> choiceBox;
 	
 	@FXML TableView<ItemVO> tabela;
 	@FXML TableColumn<ItemVO, Long> colunaId;
@@ -57,7 +57,7 @@ public class ControllerEstoque implements Initializable{
 	}
 	
 	public void atualizarChoicebox() {
-		if(choiceBoxAcai != null) {
+		if(choiceBox != null) {
 			List<TipoItem> stList = new ArrayList<TipoItem>();
 			listaTipos = TipoItem.values();
 			for(int i = 0; i < listaTipos.length; ++i) {
@@ -65,7 +65,7 @@ public class ControllerEstoque implements Initializable{
 			}
 			strListaTipos = FXCollections.observableArrayList(stList);
 			
-			choiceBoxAcai.setItems(strListaTipos);
+			choiceBox.setItems(strListaTipos);
 		}
 	}
 	
@@ -79,19 +79,45 @@ public class ControllerEstoque implements Initializable{
 		
 		ItemVO item = new ItemVO();
 		
-		if(textFieldId != null || !textFieldId.getText().trim().isEmpty()) {
+		if(textFieldId != null && !textFieldId.getText().trim().isEmpty()) {
 			item.setId(Long.parseLong(textFieldId.getText()));
 			itens.add(itemBo.buscarPorId(item));
 			if(itens.size() == 0) Telas.mensagemInfo("Sua pesquisa não retornou valor");
 			atualizarTabela();
 			return;
 		}
-		if(textFieldNome != null || !textFieldNome.getText().trim().isEmpty()){
+		if(textFieldNome != null && !textFieldNome.getText().trim().isEmpty()){
 			item.setNome(textFieldNome.getText());
 			itens.addAll(itemBo.buscarPorNome(item));
 			if(itens.size() == 0) Telas.mensagemInfo("Sua pesquisa não retornou valor");
 			atualizarTabela();
 			return;
+		}
+		if(choiceBox.getSelectionModel().getSelectedItem() != null) {
+			TipoItem tipo = choiceBox.getSelectionModel().getSelectedItem();
+			switch(tipo) {
+			case Copo:
+				itens.addAll(itemBo.listarCopos());
+				break;
+			case Acai:
+				itens.addAll(itemBo.listarAcais());
+				break;
+			case Cobertura:
+				itens.addAll(itemBo.listarCoberturas());
+				break;
+			case Creme:
+				itens.addAll(itemBo.listarCremes());
+				break;
+			case Recheio:
+				itens.addAll(itemBo.listarRecheios());
+				break;
+			default:
+				break;
+			}
+			if(itens.size() == 0) Telas.mensagemInfo("Sua pesquisa não retornou valor");
+			atualizarTabela();
+			return;
+
 		}
 		
 		
