@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerRelatorio">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Background.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Início">
+               <items>
+              <MenuItem mnemonicParsing="false" onAction="#irInicial" text="Início" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Vendas">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
+                  <MenuItem mnemonicParsing="false" text="Historico" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
+               </items>
+            </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Relatório">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Relatório" />
+               </items>
+            </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Cadastro">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Configurações">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <ImageView fitHeight="364.0" fitWidth="612.0" layoutX="176.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Div.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="buttonBuscar" fitHeight="30.0" fitWidth="200.0" layoutX="430.0" layoutY="270.0" onMouseClicked="#gerar" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../Images/ButtonGerarRelatorio.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="198.0" layoutY="116.0" text="Relatório de Vendas">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="183.0" text="Data Inicial:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="218.0" text="Data Final:" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="76.0" layoutY="241.0" text="Data Inicial da Busca:" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="83.0" layoutY="277.0" text="Data Final da Busca:" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="59.0" layoutY="312.0" text="Horário Inicial da Busca:" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label disable="true" layoutX="64.0" layoutY="347.0" text="Horário Final da Busca:" textAlignment="RIGHT" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldDataIn" disable="true" layoutX="215.0" layoutY="239.0" visible="false" />
+      <TextField fx:id="textFieldDataFi" disable="true" layoutX="215.0" layoutY="274.0" visible="false" />
+      <TextField fx:id="textFieldHoraIn" disable="true" layoutX="215.0" layoutY="309.0" visible="false" />
+      <TextField fx:id="textFieldHoraFi" disable="true" layoutX="215.0" layoutY="344.0" visible="false" />
+      <DatePicker fx:id="dataInicial" layoutX="431.0" layoutY="181.0" />
+      <DatePicker fx:id="dataFinal" layoutX="431.0" layoutY="216.0" />
+   </children>
+</Pane>
