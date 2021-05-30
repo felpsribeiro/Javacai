@@ -2,13 +2,13 @@ package model.BO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.ItemDAO;
 import model.VO.ItemVO;
 import model.VO.PedidoVO;
 import model.VO.TipoItem;
+import util.MyArrayList;
 
 public class ItemBO implements ItemInterBO{
 	ItemDAO itemDao = new ItemDAO();
@@ -94,7 +94,7 @@ public class ItemBO implements ItemInterBO{
 	
 	@Override
 	public List<ItemVO> buscarPorNome(ItemVO item){
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		ResultSet rs = itemDao.buscarPorNome(item);
 		
 		try {
@@ -120,7 +120,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listar() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listar();
 		
@@ -147,7 +147,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarCopos() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCopos();
 		
@@ -173,7 +173,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarCremes() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCremes();
 		
@@ -199,7 +199,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarAcais() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarAcais();
 		
@@ -225,7 +225,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarRecheios() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarRecheios();
 		
@@ -251,7 +251,7 @@ public class ItemBO implements ItemInterBO{
 
 	@Override
 	public List<ItemVO> listarCoberturas() {
-		List<ItemVO> lista = new ArrayList<ItemVO>();
+		List<ItemVO> lista = new MyArrayList<ItemVO>();
 		
 		ResultSet rs = itemDao.listarCoberturas();
 		

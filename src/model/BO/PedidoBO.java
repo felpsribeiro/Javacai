@@ -4,13 +4,13 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import model.DAO.PedidoDAO;
 import model.VO.ItemVO;
 import model.VO.PedidoVO;
+import util.MyArrayList;
 
 public class PedidoBO implements PedidoInterBO{
 	PedidoDAO pedidoDao = new PedidoDAO();
@@ -33,7 +33,7 @@ public class PedidoBO implements PedidoInterBO{
 
 	@Override
 	public List<PedidoVO> listar() {
-		List<PedidoVO> lista = new ArrayList<PedidoVO>();
+		List<PedidoVO> lista = new MyArrayList<PedidoVO>();
 		ResultSet rs = pedidoDao.listar();
 		ItemVO item = new ItemVO();
 		
@@ -55,7 +55,7 @@ public class PedidoBO implements PedidoInterBO{
 				item.setId(rs.getLong("cobertura_id"));
 				pedido.setCobertura(itemBo.buscarPorId(item));
 				
-				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				List<ItemVO> listaRecheios = new MyArrayList<ItemVO>();
 				item.setId(rs.getLong("recheio1_id"));
 				listaRecheios.add(itemBo.buscarPorId(item));
 				item.setId(rs.getLong("recheio2_id"));
@@ -87,7 +87,7 @@ public class PedidoBO implements PedidoInterBO{
 
 	@Override
 	public List<PedidoVO> buscarPorData(Calendar inicio, Calendar fim) {
-		List<PedidoVO> lista = new ArrayList<PedidoVO>();
+		List<PedidoVO> lista = new MyArrayList<PedidoVO>();
 		ResultSet rs = pedidoDao.buscarPorData(inicio, fim);
 		ItemVO item = new ItemVO();
 		
@@ -109,7 +109,7 @@ public class PedidoBO implements PedidoInterBO{
 				item.setId(rs.getLong("cobertura_id"));
 				pedido.setCobertura(itemBo.buscarPorId(item));
 				
-				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				List<ItemVO> listaRecheios = new MyArrayList<ItemVO>();
 				item.setId(rs.getLong("recheio1_id"));
 				listaRecheios.add(itemBo.buscarPorId(item));
 				item.setId(rs.getLong("recheio2_id"));
@@ -165,7 +165,7 @@ public class PedidoBO implements PedidoInterBO{
 				item.setId(rs.getLong("cobertura_id"));
 				pedidoR.setCobertura(itemBo.buscarPorId(item));
 				
-				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				List<ItemVO> listaRecheios = new MyArrayList<ItemVO>();
 				item.setId(rs.getLong("recheio1_id"));
 				listaRecheios.add(itemBo.buscarPorId(item));
 				item.setId(rs.getLong("recheio2_id"));
@@ -195,7 +195,7 @@ public class PedidoBO implements PedidoInterBO{
 
 	@Override
 	public List<PedidoVO> buscarPorCopo(PedidoVO pedido) {
-		List<PedidoVO> lista = new ArrayList<PedidoVO>();
+		List<PedidoVO> lista = new MyArrayList<PedidoVO>();
 		ResultSet rs = pedidoDao.buscarPorCopo(pedido);
 		ItemVO item = new ItemVO();
 		
@@ -217,7 +217,7 @@ public class PedidoBO implements PedidoInterBO{
 				item.setId(rs.getLong("cobertura_id"));
 				pedidoR.setCobertura(itemBo.buscarPorId(item));
 				
-				List<ItemVO> listaRecheios = new ArrayList<ItemVO>();
+				List<ItemVO> listaRecheios = new MyArrayList<ItemVO>();
 				item.setId(rs.getLong("recheio1_id"));
 				listaRecheios.add(itemBo.buscarPorId(item));
 				item.setId(rs.getLong("recheio2_id"));

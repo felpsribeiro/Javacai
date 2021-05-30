@@ -2,12 +2,12 @@ package model.BO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import model.DAO.UsuarioDAO;
 import model.VO.TipoUsuario;
 import model.VO.UsuarioVO;
+import util.MyArrayList;
 
 public class UsuarioBO implements UsuarioInterBO{
 	UsuarioDAO usuarioDao = new UsuarioDAO();
@@ -29,7 +29,7 @@ public class UsuarioBO implements UsuarioInterBO{
 
 	@Override
 	public List<UsuarioVO> listar() {
-		List<UsuarioVO> lista = new ArrayList<UsuarioVO>();
+		List<UsuarioVO> lista = new MyArrayList<UsuarioVO>();
 		ResultSet rs = usuarioDao.listar();
 		
 		try {
@@ -55,7 +55,7 @@ public class UsuarioBO implements UsuarioInterBO{
 
 	@Override
 	public List<UsuarioVO> buscarPorNome(UsuarioVO usuario) {
-		List<UsuarioVO> lista = new ArrayList<UsuarioVO>();
+		List<UsuarioVO> lista = new MyArrayList<UsuarioVO>();
 		ResultSet rs = usuarioDao.buscarPorNome(usuario);
 		
 		try {
@@ -81,7 +81,7 @@ public class UsuarioBO implements UsuarioInterBO{
 
 	@Override
 	public List<UsuarioVO> buscarPorId(UsuarioVO usuario) {
-		List<UsuarioVO> lista = new ArrayList<UsuarioVO>();
+		List<UsuarioVO> lista = new MyArrayList<UsuarioVO>();
 		ResultSet rs = usuarioDao.buscarPorId(usuario);
 		
 		try {
@@ -107,7 +107,7 @@ public class UsuarioBO implements UsuarioInterBO{
 
 	@Override
 	public List<UsuarioVO> buscarPorCpf(UsuarioVO usuario) {
-		List<UsuarioVO> lista = new ArrayList<UsuarioVO>();
+		List<UsuarioVO> lista = new MyArrayList<UsuarioVO>();
 		ResultSet rs = usuarioDao.buscarPorCpf(usuario);
 		
 		try {

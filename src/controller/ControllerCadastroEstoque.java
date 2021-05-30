@@ -1,8 +1,6 @@
 package controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -15,6 +13,7 @@ import javafx.scene.control.TextField;
 import model.BO.ItemBO;
 import model.VO.ItemVO;
 import model.VO.TipoItem;
+import util.MyArrayList;
 import view.Telas;
 
 public class ControllerCadastroEstoque implements Initializable {
@@ -35,7 +34,7 @@ public class ControllerCadastroEstoque implements Initializable {
 	
 	private void atualizar() {
 		if(choice != null) {
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			listaTipos = TipoItem.values();
 			for(int i = 0; i < listaTipos.length; ++i) {
 				stList.add(listaTipos[i].toString());

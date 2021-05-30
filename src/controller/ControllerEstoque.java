@@ -1,7 +1,6 @@
 package controller;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -17,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ItemBO;
 import model.VO.ItemVO;
 import model.VO.TipoItem;
+import util.MyArrayList;
 import view.Telas;
 
 public class ControllerEstoque implements Initializable{
@@ -58,7 +58,7 @@ public class ControllerEstoque implements Initializable{
 	
 	public void atualizarChoicebox() {
 		if(choiceBox != null) {
-			List<TipoItem> stList = new ArrayList<TipoItem>();
+			List<TipoItem> stList = new MyArrayList<TipoItem>();
 			listaTipos = TipoItem.values();
 			for(int i = 0; i < listaTipos.length; ++i) {
 				stList.add(listaTipos[i]);

@@ -1,7 +1,6 @@
 package controller;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -18,6 +17,7 @@ import model.BO.ItemBO;
 import model.BO.PedidoBO;
 import model.VO.ItemVO;
 import model.VO.PedidoVO;
+import util.MyArrayList;
 import view.Telas;
 
 public class ControllerHistorico implements Initializable{
@@ -64,7 +64,7 @@ public class ControllerHistorico implements Initializable{
 		if(!checkId) {
 			PedidoVO pedido = new PedidoVO();
 			pedido.setId(Long.parseLong(textFieldNu.getText().trim()));
-			List<PedidoVO> list = new ArrayList<PedidoVO>();
+			List<PedidoVO> list = new MyArrayList<PedidoVO>();
 			list.add(pedidoBo.buscarPorId(pedido));
 			pedidos = list;
 			atualizarTabela();

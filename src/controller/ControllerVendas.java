@@ -1,7 +1,6 @@
 package controller;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -14,6 +13,7 @@ import javafx.scene.control.ChoiceBox;
 import model.BO.ItemBO;
 import model.VO.ItemVO;
 import model.VO.PedidoVO;
+import util.MyArrayList;
 import view.Telas;
 
 public class ControllerVendas implements Initializable {
@@ -45,7 +45,7 @@ public class ControllerVendas implements Initializable {
 	public void atualizarCopos() {
 		if(choiceBoxCopo != null) {
 			listaCopos = itensBO.listarCopos();
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			Iterator<ItemVO> iter = listaCopos.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
@@ -59,7 +59,7 @@ public class ControllerVendas implements Initializable {
 	private void atualizarCremes() {
 		if(choiceBoxCreme != null) {
 			listaCreme = itensBO.listarCremes();
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			Iterator<ItemVO> iter = listaCreme.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
@@ -73,7 +73,7 @@ public class ControllerVendas implements Initializable {
 	private void atualizarAcai() {
 		if(choiceBoxAcai != null) {
 			listaAcai = itensBO.listarAcais();
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			Iterator<ItemVO> iter = listaAcai.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
@@ -87,7 +87,7 @@ public class ControllerVendas implements Initializable {
 	private void atualizarCobertura() {
 		if(choiceBoxCobertura != null) {
 			listaCobertura = itensBO.listarCoberturas();
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			Iterator<ItemVO> iter = listaCobertura.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
@@ -101,7 +101,7 @@ public class ControllerVendas implements Initializable {
 	private void atualizarRecheio() {
 		if(choiceBoxRe1 != null) {
 			listaRecheio = itensBO.listarRecheios();
-			List<String> stList = new ArrayList<String>();
+			List<String> stList = new MyArrayList<String>();
 			Iterator<ItemVO> iter = listaRecheio.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
@@ -143,7 +143,7 @@ public class ControllerVendas implements Initializable {
 			index = choiceBoxCobertura.getSelectionModel().getSelectedIndex();
 			pedido.setCobertura(listaCobertura.get(index));
 			
-			List<ItemVO> listRecheios = new ArrayList<ItemVO>();
+			List<ItemVO> listRecheios = new MyArrayList<ItemVO>();
 			
 			index = choiceBoxRe1.getSelectionModel().getSelectedIndex();
 			listRecheios.add(listaRecheio.get(index));
