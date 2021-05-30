@@ -1,8 +1,9 @@
 package model.VO;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import util.MyArrayList;
 
 public class PedidoVO {
 	private Long id;
@@ -15,7 +16,7 @@ public class PedidoVO {
 	private Calendar dataPedido;
 	
 	public PedidoVO(){
-		recheios = new ArrayList<ItemVO>(3);
+		recheios = new MyArrayList<ItemVO>();
 	}
 	
 	public Long getId() {

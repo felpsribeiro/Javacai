@@ -303,5 +303,14 @@ public class MyArrayList<T> implements MyArrayListInter<T>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	public String toString() {
+		String str = "";
+		
+		for(int i = 0; i < size; ++i) {
+			str += get(i).toString() + " ";
+		}
+		
+		return str;
+	}
 }
