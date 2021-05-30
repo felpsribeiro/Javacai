@@ -7,8 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import model.VO.UsuarioVO;
 
 public class Telas extends Application {
+	
+	public static UsuarioVO usuarioAtivo;
 		
 	public static void mensagemInfo(String m) {
 		Alert a = new Alert(AlertType.INFORMATION);
