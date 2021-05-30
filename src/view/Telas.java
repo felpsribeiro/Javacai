@@ -1,4 +1,4 @@
-package view;
+ package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -41,7 +41,13 @@ public class Telas extends Application {
 		setPrimaryStage(primaryStage);
 		primaryStage.setTitle("Javaçaí");
 		primaryStage.show();
-		telaInicial();
+		telaLogin();
+	}
+	
+	public static void telaLogin() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Login.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
 	}
 	
 	public static void telaInicial() throws Exception{

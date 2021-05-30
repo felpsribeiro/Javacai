@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLogin">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/BackgroundLogin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="267.0" fitWidth="395.0" layoutX="288.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/BlocoLogin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="186.0" fitWidth="190.0" layoutX="394.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="fieldCPF" layoutX="371.0" layoutY="334.0" prefHeight="33.0" prefWidth="218.0" promptText="CPF">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <PasswordField fx:id="fieldSenha" layoutX="371.0" layoutY="377.0" prefHeight="33.0" prefWidth="218.0" promptText="Senha">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </PasswordField>
+      <Button layoutX="371.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="33.0" prefWidth="218.0" text="ENTRAR" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="422.0" layoutY="464.0" onMouseClicked="#irCadastrar" text="Não é cadastrado?">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+   </children>
+</Pane>
