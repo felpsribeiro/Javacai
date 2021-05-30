@@ -36,5 +36,12 @@ public class ControllerInicial {
 		}
 	}
 	
-	
+	public void logout() {
+		try {
+			Telas.usuarioAtivo = null;
+			Telas.telaLogin();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

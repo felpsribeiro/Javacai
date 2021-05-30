@@ -50,15 +50,6 @@ public class ControllerLogin {
 		}
 	}
 	
-	public void irCadastrar() {
-		try {
-			//Telas.telaCadastrar();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	private boolean isDigit(String str) {
 		boolean isValid = true;
 		

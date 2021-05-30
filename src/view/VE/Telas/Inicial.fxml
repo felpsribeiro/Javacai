@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
@@ -98,5 +100,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label layoutX="900.0" layoutY="21.0" onMouseClicked="#logout" text="Sair" textFill="#5d24ab">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
    </children>
 </Pane>
