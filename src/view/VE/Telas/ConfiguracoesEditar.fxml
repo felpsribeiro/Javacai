@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerConfiguaracoeseEditar">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerConfiguracoesEditar">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -47,7 +47,7 @@
             <Menu mnemonicParsing="false" text="Configurações">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#irConfiguracoesVisualizar" text="Visualizar Dados" />
-                  <MenuItem disable="true" mnemonicParsing="false" onAction="#irConfiguracoesEditar" text="Editar Dados" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Editar Dados" />
                </items>
             </Menu>
         </menus>
@@ -100,8 +100,8 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField layoutX="445.0" layoutY="273.0" prefWidth="194.0" />
-      <PasswordField layoutX="445.0" layoutY="308.0" prefWidth="194.0" />
-      <PasswordField layoutX="445.0" layoutY="237.0" prefWidth="194.0" />
+      <PasswordField fx:id="nova" layoutX="445.0" layoutY="273.0" prefWidth="194.0" />
+      <PasswordField fx:id="repita" layoutX="445.0" layoutY="308.0" prefWidth="194.0" />
+      <PasswordField fx:id="antiga" layoutX="445.0" layoutY="237.0" prefWidth="194.0" />
    </children>
 </Pane>

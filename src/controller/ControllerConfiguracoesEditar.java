@@ -4,11 +4,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import model.BO.UsuarioBO;
 import view.Telas;
 
-public class ControllerConfiguracoesEditar {
+public class ControllerConfiguracoesEditar implements Initializable{
 	
 	@FXML TextField nome;
 	@FXML TextField telefone;
@@ -17,17 +19,51 @@ public class ControllerConfiguracoesEditar {
 	@FXML PasswordField repita;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//exibir o nome no nome.prompText
-		//exibir o telefone no telefone.prompText
+		nome.setText(Telas.usuarioAtivo.getNome());
+		telefone.setText(Telas.usuarioAtivo.getTelefone());
 	}
 	
 	public void salvar() {
-		//salvar as alterações nome e telefone
+		try {
+			if(!isDigit(telefone.getText().trim()))
+				throw new Exception("Telefone deve ter somente números.");
+			
+			if(!antiga.getText().equals(Telas.usuarioAtivo.getSenha()))
+				throw new Exception("Senha antiga incorreta.");
+			
+			if(nova.getText() != null && repita.getText() != null && !nova.getText().equals(repita.getText()))
+				throw new Exception("Senhas novas não compatíveis.");
+			
+			if(nova.getText() == null || repita.getText() == null || nova.getText().isEmpty() || repita.getText().isEmpty())
+				throw new Exception("Repita senha nova");
+			
+			Telas.usuarioAtivo.setNome(nome.getText().trim());
+			Telas.usuarioAtivo.setTelefone(telefone.getText().trim());
+			if(nova.getText() != null)
+				Telas.usuarioAtivo.setSenha(nova.getText());
+			
+			UsuarioBO uBo = new UsuarioBO();
+			uBo.atualizar(Telas.usuarioAtivo);
+			
+		} catch(Exception e) {
+			Telas.mensagemErro(e.toString());
+		}
 		//verificar se nova senha e repita a senha são igauis
 		//verificar se a senha velha está correta
 		//salvar a nova senha
 		
 		irConfiguracoesVisualizar();
+	}
+	
+	private boolean isDigit(String str) {
+		char[] charArray = str.toCharArray();
+		
+		for(int i = 0; i < str.length(); ++i) {
+			if(!Character.isDigit(charArray[i]))
+				return false;
+		}
+		
+		return true;
 	}
 	
 	public void irInicial() {
