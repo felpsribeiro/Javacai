@@ -76,7 +76,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="ImageRelatorio" fitHeight="156.0" fitWidth="274.0" layoutX="644.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageRelatorio" fitHeight="156.0" fitWidth="274.0" layoutX="644.0" layoutY="125.0" onMouseClicked="#irRelatorio" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageRelatorio.png" />
          </image>
@@ -92,7 +92,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="ImageConfiguracoes" fitHeight="129.0" fitWidth="274.0" layoutX="644.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageConfiguracoes" fitHeight="129.0" fitWidth="274.0" layoutX="644.0" layoutY="417.0" onMouseClicked="#irConfiguracoes" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageConfiguracoes.png" />
          </image>
@@ -100,7 +100,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="900.0" layoutY="21.0" onMouseClicked="#logout" text="Sair" textFill="#5d24ab">
+      <Label layoutX="900.0" layoutY="21.0" onMouseClicked="#logout" text="Sair" textFill="#484ca4">
          <font>
             <Font size="22.0" />
          </font>

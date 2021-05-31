@@ -36,6 +36,30 @@ public class ControllerInicial {
 		}
 	}
 	
+	public void irRelatorio() {
+		try {
+			Telas.telaRelatorio();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irCadastro() {
+		try {
+			//Telas.telaEntrada();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irConfiguracoes() {
+		try {
+			Telas.ConfiguaracoesVisualizar();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void logout() {
 		try {
 			Telas.usuarioAtivo = null;

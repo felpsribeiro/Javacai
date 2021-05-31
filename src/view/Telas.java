@@ -88,9 +88,28 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 	}
 	
+	public static void telaRelatorio() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/Relatorio.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
 	public static void telaCadastroEstoque() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/EntradaCadastro.fxml"));
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);
 	}
+	
+	public static void ConfiguaracoesVisualizar() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/ConfiguracoesVisualizar.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
+	public static void ConfiguaracoesEditar() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/ConfiguracoesEditar.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
 }

@@ -35,7 +35,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <PasswordField fx:id="fieldSenha" layoutX="371.0" layoutY="377.0" prefHeight="33.0" prefWidth="218.0" promptText="Senha">
+      <PasswordField fx:id="fieldSenha" layoutX="371.0" layoutY="386.0" prefHeight="33.0" prefWidth="218.0" promptText="Senha">
          <font>
             <Font size="14.0" />
          </font>
@@ -43,7 +43,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </PasswordField>
-      <Button layoutX="371.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="33.0" prefWidth="218.0" text="ENTRAR" textAlignment="CENTER">
+      <Button layoutX="371.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="33.0" prefWidth="218.0" text="ENTRAR" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
