@@ -65,19 +65,22 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <TableView fx:id="tabela" layoutX="166.0" layoutY="178.0" prefHeight="52.0" prefWidth="630.0">
+      <TableView fx:id="tabela" layoutX="166.0" layoutY="178.0" prefHeight="71.0" prefWidth="630.0">
         <columns>
-          <TableColumn fx:id="colunaId" prefWidth="42.0" text="Id" />
-          <TableColumn fx:id="colunaNome" prefWidth="215.0" text="Nome" />
-            <TableColumn fx:id="colunaCPF" prefWidth="137.0" text="CPF" />
-            <TableColumn fx:id="colunaTelefone" prefWidth="134.0" text="Telefone" />
-            <TableColumn fx:id="colunaTipo" prefWidth="101.0" text="Tipo de Usuario" />
+          <TableColumn fx:id="colunaId" prefWidth="27.0" text="Id" />
+          <TableColumn fx:id="colunaNome" prefWidth="198.0" text="Nome" />
+            <TableColumn fx:id="colunaCPF" prefWidth="145.0" text="CPF" />
+            <TableColumn fx:id="colunaTelefone" prefWidth="133.0" text="Telefone" />
+            <TableColumn fx:id="colunaTipo" prefWidth="121.0" text="Tipo de Usuario" />
         </columns>
       </TableView>
-      <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="419.0" layoutY="263.0" onMouseClicked="#irConfiguracoesEditar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="419.0" layoutY="273.0" onMouseClicked="#irConfiguracoesEditar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ButtonEditar.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
    </children>
 </Pane>

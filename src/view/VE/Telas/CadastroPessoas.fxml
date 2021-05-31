@@ -10,14 +10,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerConfiguaracoesVisualizar">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerCadastrarPessoas">
    <children>
       <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Background.png" />
          </image>
       </ImageView>
-      <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
+      <MenuBar layoutX="7.0" layoutY="70.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
           <Menu mnemonicParsing="false" text="Início">
                <items>
@@ -41,12 +41,12 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#irCadastro" text="Cadastrar Pessoas" />
+                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Configurações">
                <items>
-                  <MenuItem disable="true" mnemonicParsing="false" text="Visualizar Dados" />
+                  <MenuItem mnemonicParsing="false" onAction="#irConfiguracoesVisualizar" text="Visualizar Dados" />
                   <MenuItem mnemonicParsing="false" onAction="#irConfiguracoesEditar" text="Editar Dados" />
                </items>
             </Menu>
@@ -55,20 +55,59 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <ImageView fitHeight="317.0" fitWidth="660.0" layoutX="150.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="317.0" fitWidth="660.0" layoutX="150.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <Label layoutX="174.0" layoutY="112.0" text="Cadastrar Pessoas">
+      <Label layoutX="174.0" layoutY="112.0" text="Cadastro Pessoas">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="413.0" layoutY="261.0" onMouseClicked="#irEditar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="414.0" layoutY="381.0" onMouseClicked="#cadastrar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/ButtonEditar.png" />
+            <Image url="@../Images/ButtonCadastrar.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
+      <Label layoutX="394.0" layoutY="167.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nome" layoutX="445.0" layoutY="164.0" prefHeight="25.0" prefWidth="194.0" />
+      <TextField fx:id="telefone" layoutX="445.0" layoutY="198.0" prefHeight="25.0" prefWidth="194.0" />
+      <Label layoutX="380.0" layoutY="201.0" text="Telefone:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="394.0" layoutY="272.0" text="Senha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="341.0" layoutY="306.0" text="Repita a Senha:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="409.0" layoutY="236.0" text="CPF:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="336.0" layoutY="341.0" text="Tipo de Usuario:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="senha" layoutX="445.0" layoutY="269.0" prefWidth="194.0" />
+      <PasswordField fx:id="repita" layoutX="445.0" layoutY="304.0" prefWidth="194.0" />
+      <ChoiceBox fx:id="tipo" layoutX="445.0" layoutY="339.0" prefWidth="194.0" />
+      <TextField fx:id="telefone1" layoutX="445.0" layoutY="234.0" prefHeight="25.0" prefWidth="194.0" />
    </children>
 </Pane>

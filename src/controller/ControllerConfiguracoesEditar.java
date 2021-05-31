@@ -34,25 +34,23 @@ public class ControllerConfiguracoesEditar implements Initializable{
 			if(nova.getText() != null && repita.getText() != null && !nova.getText().equals(repita.getText()))
 				throw new Exception("Senhas novas não compatíveis.");
 			
-			if(nova.getText() == null || repita.getText() == null || nova.getText().isEmpty() || repita.getText().isEmpty())
+			if(nova.getText() == null && repita.getText() != null || nova.getText() != null && repita.getText() == null)
 				throw new Exception("Repita senha nova");
 			
 			Telas.usuarioAtivo.setNome(nome.getText().trim());
 			Telas.usuarioAtivo.setTelefone(telefone.getText().trim());
+			
 			if(nova.getText() != null)
 				Telas.usuarioAtivo.setSenha(nova.getText());
 			
 			UsuarioBO uBo = new UsuarioBO();
 			uBo.atualizar(Telas.usuarioAtivo);
+			irConfiguracoesVisualizar();
 			
 		} catch(Exception e) {
 			Telas.mensagemErro(e.toString());
 		}
-		//verificar se nova senha e repita a senha são igauis
-		//verificar se a senha velha está correta
-		//salvar a nova senha
 		
-		irConfiguracoesVisualizar();
 	}
 	
 	private boolean isDigit(String str) {
