@@ -173,7 +173,10 @@ public class MyArrayList<T> implements MyArrayListInter<T>{
 
 	@Override
 	public T get(int index) {
-		return searchByPosition(index).value;
+		if(searchByPosition(index) != null)
+			return searchByPosition(index).value;
+		else 
+			return null;
 	}
 
 	@Override

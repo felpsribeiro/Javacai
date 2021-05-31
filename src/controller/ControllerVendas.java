@@ -17,39 +17,39 @@ import util.MyArrayList;
 import view.Telas;
 
 public class ControllerVendas implements Initializable {
-	@FXML ChoiceBox choiceBoxCopo;
-	@FXML ChoiceBox choiceBoxCreme;
-	@FXML ChoiceBox choiceBoxAcai;
-	@FXML ChoiceBox choiceBoxCobertura;
-	@FXML ChoiceBox choiceBoxRe1;
-	@FXML ChoiceBox choiceBoxRe2;
-	@FXML ChoiceBox choiceBoxRe3;
-	@FXML ChoiceBox choiceBoxRe4;
-	@FXML ChoiceBox choiceBoxRe5;
-	@FXML ChoiceBox choiceBoxRe6;
+	@FXML ChoiceBox<ItemVO> choiceBoxCopo;
+	@FXML ChoiceBox<ItemVO> choiceBoxCreme;
+	@FXML ChoiceBox<ItemVO> choiceBoxAcai;
+	@FXML ChoiceBox<ItemVO> choiceBoxCobertura;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe1;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe2;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe3;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe4;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe5;
+	@FXML ChoiceBox<ItemVO> choiceBoxRe6;
 	
 	private ItemBO itensBO = new ItemBO();
 	private List<ItemVO> listaCopos;
-	private ObservableList<String> listaStgCopos;
+	private ObservableList<ItemVO> listaStgCopos;
 	private List<ItemVO> listaCreme;
-	private ObservableList<String> listaStgCreme;
+	private ObservableList<ItemVO> listaStgCreme;
 	private List<ItemVO> listaAcai;
-	private ObservableList<String> listaStgAcai;
+	private ObservableList<ItemVO> listaStgAcai;
 	private List<ItemVO> listaCobertura;
-	private ObservableList<String> listaStgCobertura;
+	private ObservableList<ItemVO> listaStgCobertura;
 	private List<ItemVO> listaRecheio;
-	private ObservableList<String> listaStgRecheio;
+	private ObservableList<ItemVO> listaStgRecheio;
 	
 	static PedidoVO pedido = new PedidoVO();
 	
 	public void atualizarCopos() {
 		if(choiceBoxCopo != null) {
 			listaCopos = itensBO.listarCopos();
-			List<String> stList = new MyArrayList<String>();
+			List<ItemVO> stList = new MyArrayList<ItemVO>();
 			Iterator<ItemVO> iter = listaCopos.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
-				stList.add(us.getNome());
+				stList.add(us);
 			}
 			listaStgCopos = FXCollections.observableArrayList(stList);
 			choiceBoxCopo.setItems(listaStgCopos);
@@ -59,11 +59,11 @@ public class ControllerVendas implements Initializable {
 	private void atualizarCremes() {
 		if(choiceBoxCreme != null) {
 			listaCreme = itensBO.listarCremes();
-			List<String> stList = new MyArrayList<String>();
+			List<ItemVO> stList = new MyArrayList<ItemVO>();
 			Iterator<ItemVO> iter = listaCreme.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
-				stList.add(us.getNome());
+				stList.add(us);
 			}
 			listaStgCreme = FXCollections.observableArrayList(stList);
 			choiceBoxCreme.setItems(listaStgCreme);
@@ -73,11 +73,11 @@ public class ControllerVendas implements Initializable {
 	private void atualizarAcai() {
 		if(choiceBoxAcai != null) {
 			listaAcai = itensBO.listarAcais();
-			List<String> stList = new MyArrayList<String>();
+			List<ItemVO> stList = new MyArrayList<ItemVO>();
 			Iterator<ItemVO> iter = listaAcai.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
-				stList.add(us.getNome());
+				stList.add(us);
 			}
 			listaStgAcai = FXCollections.observableArrayList(stList);
 			choiceBoxAcai.setItems(listaStgAcai);
@@ -87,11 +87,11 @@ public class ControllerVendas implements Initializable {
 	private void atualizarCobertura() {
 		if(choiceBoxCobertura != null) {
 			listaCobertura = itensBO.listarCoberturas();
-			List<String> stList = new MyArrayList<String>();
+			List<ItemVO> stList = new MyArrayList<ItemVO>();
 			Iterator<ItemVO> iter = listaCobertura.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
-				stList.add(us.getNome());
+				stList.add(us);
 			}
 			listaStgCobertura = FXCollections.observableArrayList(stList);
 			choiceBoxCobertura.setItems(listaStgCobertura);
@@ -101,11 +101,11 @@ public class ControllerVendas implements Initializable {
 	private void atualizarRecheio() {
 		if(choiceBoxRe1 != null) {
 			listaRecheio = itensBO.listarRecheios();
-			List<String> stList = new MyArrayList<String>();
+			List<ItemVO> stList = new MyArrayList<ItemVO>();
 			Iterator<ItemVO> iter = listaRecheio.iterator();
 			while(iter.hasNext()) {
 				ItemVO us = iter.next();
-				stList.add(us.getNome());
+				stList.add(us);
 			}
 			listaStgRecheio = FXCollections.observableArrayList(stList);
 			choiceBoxRe1.setItems(listaStgRecheio);
@@ -129,32 +129,29 @@ public class ControllerVendas implements Initializable {
 	public void irConfirmar() {
 		
 		try {
-			int index;
+			if(choiceBoxCopo.getValue() == null || choiceBoxAcai.getValue() == null)
+				throw new Exception("Preencha todos os campos obrigatórios(Copo e Açaí)");
 			
-			index = choiceBoxCopo.getSelectionModel().getSelectedIndex();
-			pedido.setCopo(listaCopos.get(index));
+			pedido.setCopo(choiceBoxCopo.getValue());
 			
-			index = choiceBoxCreme.getSelectionModel().getSelectedIndex();
-			pedido.setCreme(listaCreme.get(index));
+			pedido.setCreme(choiceBoxCreme.getValue());
 			
-			index = choiceBoxAcai.getSelectionModel().getSelectedIndex();
-			pedido.setAcai(listaAcai.get(index));
+			pedido.setAcai(choiceBoxAcai.getValue());
 			
-			index = choiceBoxCobertura.getSelectionModel().getSelectedIndex();
-			pedido.setCobertura(listaCobertura.get(index));
+			pedido.setCobertura(choiceBoxCobertura.getValue());
 			
 			List<ItemVO> listRecheios = new MyArrayList<ItemVO>();
 			
-			index = choiceBoxRe1.getSelectionModel().getSelectedIndex();
-			listRecheios.add(listaRecheio.get(index));
-			index = choiceBoxRe2.getSelectionModel().getSelectedIndex();
-			listRecheios.add(listaRecheio.get(index));
-			index = choiceBoxRe3.getSelectionModel().getSelectedIndex();
-			listRecheios.add(listaRecheio.get(index));
+			if(choiceBoxRe1 != null && choiceBoxRe1.getValue() != null)
+				listRecheios.add(choiceBoxRe1.getValue());
+			
+			if(choiceBoxRe1 != null && choiceBoxRe1.getValue() != null)
+				listRecheios.add(choiceBoxRe2.getValue());
+			
+			if(choiceBoxRe1 != null && choiceBoxRe1.getValue() != null)
+				listRecheios.add(choiceBoxRe3.getValue());
 			
 			pedido.setRecheios(listRecheios);
-			
-			
 			
 			try {
 				Telas.telaConfirmacao();
@@ -162,8 +159,8 @@ public class ControllerVendas implements Initializable {
 				e.printStackTrace();
 			}
 			
-		} catch (ArrayIndexOutOfBoundsException e) {
-			Telas.mensagemErro("Preencha todos os campos antes de enviar a Nova Venda.");;
+		} catch (Exception e) {
+			Telas.mensagemErro(e.toString());
 		}
 	}
 	

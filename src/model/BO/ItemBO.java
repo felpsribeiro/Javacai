@@ -44,7 +44,7 @@ public class ItemBO implements ItemInterBO{
 		double aux;
 		
 		aux = buscarPorId(item).getQuantidade();		//1 pacote de orio ~> 4 porções
-		aux = aux - (1 / item.getPorcao());				//0,25 pacotes de orio ~> 1 porção
+		aux = aux - (item.getPorcao());				//0,25 pacotes de orio ~> 1 porção
 		item.setQuantidade(aux);
 		
 		itemDao.atualizarQuantidade(item);
@@ -60,10 +60,12 @@ public class ItemBO implements ItemInterBO{
 		retirarItem(pedido.getAcai());
 		
 		//retirar o Creme
-		retirarItem(pedido.getCreme());
+		if(pedido.getCreme() != null)
+			retirarItem(pedido.getCreme());
 		
 		//retirar a Cobertura
-		retirarItem(pedido.getCobertura());
+		if(pedido.getCobertura() != null)
+			retirarItem(pedido.getCobertura());
 		
 		//retirar os Recheios
 		for(ItemVO recheio : pedido.getRecheios()) {

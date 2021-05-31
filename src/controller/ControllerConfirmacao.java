@@ -25,9 +25,15 @@ public class ControllerConfirmacao implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		label1.setText(ControllerVendas.pedido.getCopo().getNome());
-		label2.setText(ControllerVendas.pedido.getCreme().getNome());
+		if(ControllerVendas.pedido.getCreme() != null)
+			label2.setText(ControllerVendas.pedido.getCreme().getNome());
+		else 
+			label2.setText("Sem creme");
 		label3.setText(ControllerVendas.pedido.getAcai().getNome());
-		label4.setText(ControllerVendas.pedido.getCobertura().getNome());
+		if(ControllerVendas.pedido.getCobertura() != null)
+			label4.setText(ControllerVendas.pedido.getCobertura().getNome());
+		else 
+			label4.setText("Sem cobertura");
 		
 		List<ItemVO> listRecheios = ControllerVendas.pedido.getRecheios();
 		String StgRecheios = "";
@@ -35,7 +41,10 @@ public class ControllerConfirmacao implements Initializable {
 			StgRecheios += item.getNome() + ", ";
 			System.out.println(StgRecheios);
 		}
-		StgRecheios = StgRecheios.substring(0, (StgRecheios.length()-2));
+		if(StgRecheios.length() >= 2)
+			StgRecheios = StgRecheios.substring(0, (StgRecheios.length()-2));
+		else 
+			StgRecheios = "Sem recheios";
 		label5.setText(StgRecheios); 
 	}
 	
@@ -51,6 +60,7 @@ public class ControllerConfirmacao implements Initializable {
 				e.printStackTrace();
 			}
 		} catch (Exception e){
+			e.printStackTrace();
 			Telas.mensagemErro("Não foi possível realizar a venda.");
 		}
 	}
