@@ -1,32 +1,50 @@
 package controller;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import model.VO.ItemVO;
-import model.VO.PedidoVO;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.VO.UsuarioVO;
+import util.MyArrayList;
 import model.VO.TipoUsuario;
 import view.Telas;
 
-public class ControllerConfiguaracoesVisualizar {
-	@FXML TableView<PedidoVO> tabela;
-	@FXML TableColumn<PedidoVO, Long> colunaId;
-	@FXML TableColumn<PedidoVO, String> colunaNome;
-	@FXML TableColumn<PedidoVO, String> colunaCPF;
-	@FXML TableColumn<PedidoVO, String> colunaTelefone;
-	@FXML TableColumn<PedidoVO, TipoUsuario> colunaTipo;
+public class ControllerConfiguaracoesVisualizar implements Initializable{
+	@FXML TableView<UsuarioVO> tabela;
+	@FXML TableColumn<UsuarioVO, Long> colunaId;
+	@FXML TableColumn<UsuarioVO, String> colunaNome;
+	@FXML TableColumn<UsuarioVO, String> colunaCPF;
+	@FXML TableColumn<UsuarioVO, String> colunaTelefone;
+	@FXML TableColumn<UsuarioVO, TipoUsuario> colunaTipo;
 	
+	List<UsuarioVO> usuarioL;
+	ObservableList<UsuarioVO> usuarioOL;
+	
+	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		colunaId.setCellValueFactory(new PropertyValueFactory<UsuarioVO, Long>("id"));
+		colunaNome.setCellValueFactory(new PropertyValueFactory<UsuarioVO, String>("nome"));
+		colunaCPF.setCellValueFactory(new PropertyValueFactory<UsuarioVO, String>("cpf"));
+		colunaTelefone.setCellValueFactory(new PropertyValueFactory<UsuarioVO, String>("telefone"));
+		colunaTipo.setCellValueFactory(new PropertyValueFactory<UsuarioVO, TipoUsuario>("tipoUsuario"));
+		
+		usuarioL = new MyArrayList<UsuarioVO>();
+		usuarioL.add(Telas.usuarioAtivo);
+		
 		visualizar();
 	}
 	
 	
 	private void visualizar() {
-		//exibir dados na tabela
-		
+		usuarioOL = FXCollections.observableArrayList(usuarioL);
+		tabela.setItems(usuarioOL);
 	}
 
 

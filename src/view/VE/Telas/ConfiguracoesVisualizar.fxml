@@ -68,10 +68,10 @@
       <TableView fx:id="tabela" layoutX="166.0" layoutY="178.0" prefHeight="52.0" prefWidth="630.0">
         <columns>
           <TableColumn fx:id="colunaId" prefWidth="42.0" text="Id" />
-          <TableColumn fx:id="colunaNome" prefWidth="191.0" text="Nome" />
-            <TableColumn fx:id="colunaCPF" prefWidth="140.0" text="CPF" />
-            <TableColumn prefWidth="130.0" text="Telefone" />
-            <TableColumn prefWidth="103.0" text="Tipo de Usuario" />
+          <TableColumn fx:id="colunaNome" prefWidth="215.0" text="Nome" />
+            <TableColumn fx:id="colunaCPF" prefWidth="137.0" text="CPF" />
+            <TableColumn fx:id="colunaTelefone" prefWidth="134.0" text="Telefone" />
+            <TableColumn fx:id="colunaTipo" prefWidth="101.0" text="Tipo de Usuario" />
         </columns>
       </TableView>
       <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="419.0" layoutY="263.0" onMouseClicked="#irConfiguracoesEditar" pickOnBounds="true" preserveRatio="true">
