@@ -37,9 +37,12 @@ public class ControllerConfirmacao implements Initializable {
 		
 		List<ItemVO> listRecheios = ControllerVendas.pedido.getRecheios();
 		String StgRecheios = "";
-		for (ItemVO item : listRecheios) {
-			StgRecheios += item.getNome() + ", ";
-			System.out.println(StgRecheios);
+		if(!listRecheios.isEmpty()) {
+			for (int i = 0; i < listRecheios.size(); ++i) {
+				ItemVO item = listRecheios.get(i);
+				StgRecheios += item.getNome() + ", ";
+				System.out.println(StgRecheios);
+			}
 		}
 		if(StgRecheios.length() >= 2)
 			StgRecheios = StgRecheios.substring(0, (StgRecheios.length()-2));

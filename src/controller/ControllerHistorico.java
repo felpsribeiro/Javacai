@@ -76,6 +76,8 @@ public class ControllerHistorico implements Initializable{
 			pedido.setCopo(choiceboxCopo.getSelectionModel().getSelectedItem());
 			pedidos = pedidoBo.buscarPorCopo(pedido);
 		}
+		
+		atualizarTabela();
 	}
 	
 	public void atualizarChoicebox() {
