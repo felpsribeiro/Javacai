@@ -61,7 +61,7 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="buttonBuscar" fitHeight="30.0" fitWidth="200.0" layoutX="430.0" layoutY="270.0" onMouseClicked="#gerar" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="buttonBuscar" fitHeight="34.0" fitWidth="149.0" layoutX="430.0" layoutY="270.0" onMouseClicked="#gerar" pickOnBounds="true" preserveRatio="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
