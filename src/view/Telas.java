@@ -44,8 +44,8 @@ public class Telas extends Application {
 		setPrimaryStage(primaryStage);
 		primaryStage.setTitle("Javaçaí");
 		primaryStage.show();
-		//telaLogin();
-		telaInicial();
+		telaLogin();
+		//telaInicial();
 	}
 	
 	public static void telaLogin() throws Exception{

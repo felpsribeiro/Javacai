@@ -151,16 +151,10 @@ public class ControllerVendas implements Initializable {
 			listRecheios.add(listaRecheio.get(index));
 			index = choiceBoxRe3.getSelectionModel().getSelectedIndex();
 			listRecheios.add(listaRecheio.get(index));
-			if(false) { // DEFINIR VARIAVEL QUE VAI HABILITAR MAIS DE 3 RECHEIOS EM UNICO AÇAI
-				index = choiceBoxRe4.getSelectionModel().getSelectedIndex();
-				listRecheios.add(listaRecheio.get(index));
-				index = choiceBoxRe5.getSelectionModel().getSelectedIndex();
-				listRecheios.add(listaRecheio.get(index));
-				index = choiceBoxRe6.getSelectionModel().getSelectedIndex();
-				listRecheios.add(listaRecheio.get(index));
-			}
 			
 			pedido.setRecheios(listRecheios);
+			
+			
 			
 			try {
 				Telas.telaConfirmacao();

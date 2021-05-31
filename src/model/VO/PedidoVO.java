@@ -17,6 +17,7 @@ public class PedidoVO {
 	
 	public PedidoVO(){
 		recheios = new MyArrayList<ItemVO>();
+		preco = 10.00;
 	}
 	
 	public Long getId() {
