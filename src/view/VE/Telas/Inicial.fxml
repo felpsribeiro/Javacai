@@ -13,12 +13,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerInicial">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="960.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="960.0" layoutX="1.0" layoutY="1.0" onMouseClicked="#irVendas" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/Background.png" />
          </image>
       </ImageView>
-      <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
+      <MenuBar layoutY="68.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
           <Menu disable="true" mnemonicParsing="false" text="Início" />
           <Menu mnemonicParsing="false" text="Vendas">
@@ -34,12 +34,12 @@
                </items></Menu>
             <Menu mnemonicParsing="false" text="Relatórios">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Gerar Relatório" />
+                  <MenuItem mnemonicParsing="false" onAction="#irRelatorio" text="Gerar Relatório" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
+                  <MenuItem mnemonicParsing="false" onAction="#irCadastro" text="Cadastrar Pessoas" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Configurações">

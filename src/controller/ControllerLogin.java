@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import exception.ExceptionLogin;
+import exception.ExceptionMensagem;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.BO.UsuarioBO;
@@ -15,13 +15,12 @@ public class ControllerLogin {
 	
 	public void login() {
 		try {
-			System.out.println("chegou 1");
 			if (fieldCPF.getText().isEmpty() || fieldSenha.getText().isEmpty()) {
-				throw new ExceptionLogin("Preencha todos os campos.");
+				throw new ExceptionMensagem("Preencha todos os campos.");
 			}
 			
 			if(!isDigit(fieldCPF.getText().trim()))
-				throw new ExceptionLogin("CPF deve ser somente números.");
+				throw new ExceptionMensagem("CPF deve ser somente números.");
 			
 			UsuarioVO vo = new UsuarioVO();
 			vo.setCpf(fieldCPF.getText());
@@ -35,14 +34,14 @@ public class ControllerLogin {
 			//Telas.usuarioAtivo = usuario;
 			
 			if(usuario == null) {
-				throw new ExceptionLogin("Login inexistente");
+				throw new ExceptionMensagem("Login inexistente");
 			}
 			else {
 				if (fieldSenha.getText().equals(usuario.getSenha())) {
 					Telas.usuarioAtivo = usuario;
 					Telas.telaInicial();
 				}
-				else throw new ExceptionLogin("Senha incorreta");
+				else throw new ExceptionMensagem("Senha incorreta");
 			}
 			
 		} catch (Exception e) {

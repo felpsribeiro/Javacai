@@ -19,29 +19,35 @@
       </ImageView>
       <MenuBar layoutY="67.0" prefHeight="25.0" prefWidth="960.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Início" />
+          <Menu mnemonicParsing="false" text="Início">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irInicial" text="Início" />
+               </items></Menu>
           <Menu mnemonicParsing="false" text="Vendas">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Historico" />
+              <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Estoque" />
-            <Menu mnemonicParsing="false" text="Entrada" />
+          <Menu mnemonicParsing="false" text="Estoque">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
+                  <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
+               </items></Menu>
             <Menu mnemonicParsing="false" text="Relatório">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Gerar Relatório" />
+                  <MenuItem mnemonicParsing="false" onAction="#irRelatorio" text="Gerar Relatório" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
+                  <MenuItem mnemonicParsing="false" onAction="#irCadastro" text="Cadastrar Pessoas" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Configurações">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Visualizar Dados" />
-                  <MenuItem mnemonicParsing="false" text="Editar Dados" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Visualizar Dados" />
+                  <MenuItem mnemonicParsing="false" onAction="#irConfiguracoesEditar" text="Editar Dados" />
                </items>
             </Menu>
         </menus>
@@ -54,7 +60,7 @@
             <Image url="@../Images/Div.png" />
          </image>
       </ImageView>
-      <Label layoutX="174.0" layoutY="112.0" text="Visualizar Dados">
+      <Label layoutX="174.0" layoutY="112.0" text="Editar Dados">
          <font>
             <Font size="23.0" />
          </font>
@@ -70,7 +76,7 @@
       </TableView>
       <ImageView fitHeight="34.0" fitWidth="149.0" layoutX="413.0" layoutY="261.0" onMouseClicked="#irEditar" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Images/ButtonEditar.png" />
+            <Image url="@../Images/ButtonSalvar.png" />
          </image>
       </ImageView>
    </children>

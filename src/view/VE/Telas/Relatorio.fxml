@@ -42,13 +42,13 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
+                  <MenuItem mnemonicParsing="false" onAction="#irCadastro" text="Cadastrar Pessoas" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Configurações">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Visualizar Dados" />
-                  <MenuItem mnemonicParsing="false" text="Editar Dados" />
+                  <MenuItem mnemonicParsing="false" onAction="#irConfiguracoes" text="Visualizar Dados" />
+                  <MenuItem mnemonicParsing="false" onAction="#irConfiguracoesEditar" text="Editar Dados" />
                </items>
             </Menu>
         </menus>

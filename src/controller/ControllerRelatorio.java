@@ -227,7 +227,7 @@ public class ControllerRelatorio {
 	
 	public void irCadastro() {
 		try {
-			//Telas.telaEntrada();
+			Telas.telaCadastroPessoas();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -236,6 +236,14 @@ public class ControllerRelatorio {
 	public void irConfiguracoes() {
 		try {
 			Telas.ConfiguaracoesVisualizar();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irConfiguracoesEditar() {
+		try {
+			Telas.ConfiguaracoesEditar();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

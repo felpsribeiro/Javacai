@@ -1,5 +1,7 @@
 package controller;
 
+import exception.ExceptionMensagem;
+import model.VO.TipoUsuario;
 import view.Telas;
 
 public class ControllerInicial {
@@ -46,7 +48,10 @@ public class ControllerInicial {
 	
 	public void irCadastro() {
 		try {
-			//Telas.telaEntrada();
+			if(Telas.usuarioAtivo.getTipoUsuario() == TipoUsuario.Funcionario) {
+				throw new ExceptionMensagem("Você não tem acesso para Cadastro Pessoas");
+			}
+			Telas.telaCadastroPessoas();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

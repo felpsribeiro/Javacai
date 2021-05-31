@@ -44,7 +44,8 @@ public class Telas extends Application {
 		setPrimaryStage(primaryStage);
 		primaryStage.setTitle("Javaçaí");
 		primaryStage.show();
-		telaLogin();
+		//telaLogin();
+		telaInicial();
 	}
 	
 	public static void telaLogin() throws Exception{
@@ -108,6 +109,12 @@ public class Telas extends Application {
 	
 	public static void ConfiguaracoesEditar() throws Exception{
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/ConfiguracoesEditar.fxml"));
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+	}
+	
+	public static void telaCadastroPessoas() throws Exception{
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/Telas/CadastroPessoas.fxml"));
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);
 	}
