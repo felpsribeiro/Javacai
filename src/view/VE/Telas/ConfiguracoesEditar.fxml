@@ -85,7 +85,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="nova" layoutX="445.0" layoutY="272.0" prefHeight="25.0" prefWidth="194.0" />
       <Label layoutX="358.0" layoutY="275.0" text="Nova Senha:">
          <font>
             <Font size="14.0" />
@@ -96,12 +95,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="repita" layoutX="447.0" layoutY="307.0" prefHeight="25.0" prefWidth="194.0" />
       <Label layoutX="350.0" layoutY="239.0" text="Senha Antiga:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="antiga" layoutX="445.0" layoutY="236.0" prefHeight="25.0" prefWidth="194.0" />
+      <PasswordField layoutX="445.0" layoutY="273.0" prefWidth="194.0" />
+      <PasswordField layoutX="445.0" layoutY="308.0" prefWidth="194.0" />
+      <PasswordField layoutX="445.0" layoutY="237.0" prefWidth="194.0" />
    </children>
 </Pane>

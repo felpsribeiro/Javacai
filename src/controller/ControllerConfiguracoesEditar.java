@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import view.Telas;
 
@@ -11,9 +12,9 @@ public class ControllerConfiguracoesEditar {
 	
 	@FXML TextField nome;
 	@FXML TextField telefone;
-	@FXML TextField antiga;
-	@FXML TextField nova;
-	@FXML TextField repita;
+	@FXML PasswordField antiga;
+	@FXML PasswordField nova;
+	@FXML PasswordField repita;
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//exibir o nome no nome.prompText
