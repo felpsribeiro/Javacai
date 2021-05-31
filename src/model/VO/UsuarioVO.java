@@ -8,7 +8,7 @@ public class UsuarioVO extends PessoaVO {
 	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(String cpf) throws Exception {
 		if(cpf != null && !cpf.isEmpty()) {
 			String cpfAux = new String("");
 			for(int i = 0; i < cpf.length(); ++i) {
@@ -58,10 +58,9 @@ public class UsuarioVO extends PessoaVO {
 							return;
 						}
 					}
-					System.out.println("CPF invalido");
+					throw new Exception("CPF inválido");
 			}
 		}
-		System.out.println("CPF invalido");
 	}
 	
 	public String getSenha() {

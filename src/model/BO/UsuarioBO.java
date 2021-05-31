@@ -48,6 +48,9 @@ public class UsuarioBO implements UsuarioInterBO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		return lista;
@@ -72,6 +75,9 @@ public class UsuarioBO implements UsuarioInterBO{
 				lista.add(usu);
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -100,6 +106,9 @@ public class UsuarioBO implements UsuarioInterBO{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		return lista;
@@ -124,6 +133,9 @@ public class UsuarioBO implements UsuarioInterBO{
 				lista.add(usu);
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -108,6 +108,6 @@
       <PasswordField fx:id="senha" layoutX="445.0" layoutY="269.0" prefWidth="194.0" />
       <PasswordField fx:id="repita" layoutX="445.0" layoutY="304.0" prefWidth="194.0" />
       <ChoiceBox fx:id="tipo" layoutX="445.0" layoutY="339.0" prefWidth="194.0" />
-      <TextField fx:id="telefone1" layoutX="445.0" layoutY="234.0" prefHeight="25.0" prefWidth="194.0" />
+      <TextField fx:id="cpf" layoutX="445.0" layoutY="234.0" prefHeight="25.0" prefWidth="194.0" />
    </children>
 </Pane>
