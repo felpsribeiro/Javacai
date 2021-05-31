@@ -39,9 +39,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#irRelatorio" text="Gerar Relatório" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Cadastro">
+            <Menu disable="true" mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Cadastrar Pessoas" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Configurações">

@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import model.BO.ItemBO;
 import model.VO.ItemVO;
 import view.Telas;
@@ -16,11 +17,17 @@ public class ControllerEntrada {
 	@FXML Label	label2;
 	@FXML Label	label3;
 	@FXML Label	label4;
-	@FXML Label	label5;
+	@FXML Label	id;
+	@FXML Label	nome;
+	@FXML Label	un;
+	@FXML Label	atual;
+	@FXML Label quant;
+	@FXML ImageView buttonCadastrar;
 	ItemVO item = new ItemVO();
 	ItemBO itBO = new ItemBO();
 	
 	public void pesquisar() {
+		visivel(false);
 		if(textFieldId.getText() != null && !textFieldId.getText().isEmpty()) {
 			try {
 				item.setId(Long.valueOf(textFieldId.getText()));
@@ -59,18 +66,38 @@ public class ControllerEntrada {
 	}
 
 	public void exibir(ItemVO item) {
+		visivel(true);
+		
 		label1.setText(item.getId().toString());
 		label2.setText(item.getNome());
 		label3.setText(item.getUnidadeDeEntrada());
 		label4.setText(String.valueOf(item.getQuantidade()));
-		//label5.setText(); label com o campo "Ultima entrada"
+	}
+
+	private void visivel(boolean b) {
+		id.setVisible(b);
+		nome.setVisible(b);
+		un.setVisible(b);
+		atual.setVisible(b);
+		label1.setVisible(b);
+		label2.setVisible(b);
+		label3.setVisible(b);
+		label4.setVisible(b);
+		quant.setVisible(b);
+		textFieldEnt.setVisible(b);
+		buttonCadastrar.setVisible(b);
 	}
 
 	public void cadastrar() {
-		item.setQuantidade(Double.parseDouble(textFieldEnt.getText().replaceAll(",", ".")));
-		itBO.adicionarItem(item);
-		exibir(item);
-		Telas.mensagemInfo("Entrada realizada.");
+		if(textFieldEnt.getText().matches("^[0-9]*[.]{0,1}[0-9]*$")) {
+			item.setQuantidade(Double.parseDouble(textFieldEnt.getText().replaceAll(",", ".")));
+			itBO.adicionarItem(item);
+			exibir(item);
+			Telas.mensagemInfo("Entrada realizada.");
+		}
+		else {
+			Telas.mensagemErro("Digite números.");
+		}
 	}
 	
 	public void irCadastrar() {

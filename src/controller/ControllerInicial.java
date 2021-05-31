@@ -53,7 +53,7 @@ public class ControllerInicial {
 			}
 			Telas.telaCadastroPessoas();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Telas.mensagemErro(e.toString());
 		}
 	}
 	
