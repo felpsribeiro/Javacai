@@ -26,7 +26,7 @@
           <Menu mnemonicParsing="false" text="Vendas">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#irVendas" text="Nova Venda" />
-                  <MenuItem mnemonicParsing="false" text="Historico" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHistorico" text="Historico" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Estoque">
@@ -40,14 +40,15 @@
                   <MenuItem mnemonicParsing="false" text="Relatório" />
                </items>
             </Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Cadastro">
+            <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
                </items>
             </Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Configurações">
+            <Menu mnemonicParsing="false" text="Configurações">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Visualizar Dados" />
+                  <MenuItem mnemonicParsing="false" text="Editar Dados" />
                </items>
             </Menu>
         </menus>

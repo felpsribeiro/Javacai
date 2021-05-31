@@ -32,19 +32,20 @@
                   <MenuItem mnemonicParsing="false" onAction="#irEntrada" text="Entrada" />
                   <MenuItem mnemonicParsing="false" onAction="#irEstoque" text="Visualizar Estoque" />
                </items></Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Relatórios">
+            <Menu mnemonicParsing="false" text="Relatórios">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Gerar Relatório" />
                </items>
             </Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Cadastro">
+            <Menu mnemonicParsing="false" text="Cadastro">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Cadastrar Pessoas" />
                </items>
             </Menu>
-            <Menu disable="true" mnemonicParsing="false" text="Configurações">
+            <Menu mnemonicParsing="false" text="Configurações">
                <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Visualizar Dados" />
+                  <MenuItem mnemonicParsing="false" text="Editar Dados" />
                </items>
             </Menu>
         </menus>
@@ -84,7 +85,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="ImageCadastrar" fitHeight="137.0" fitWidth="274.0" layoutX="644.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageCadastrar" fitHeight="137.0" fitWidth="274.0" layoutX="644.0" layoutY="271.0" onMouseClicked="#irCadastro" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/ImageCadastrar.png" />
          </image>

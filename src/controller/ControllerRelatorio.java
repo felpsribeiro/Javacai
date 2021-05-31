@@ -35,7 +35,7 @@ public class ControllerRelatorio {
 	
 	private final static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 	
-	public void gerarRelatorio() {
+	public void gerar() {
 		if ((dataInicial.getValue() == null) != (dataFinal.getValue() == null)) {
 			Telas.mensagemInfo("Por favor, preencha o campo vazio do Filtro por data");
 			return;
@@ -149,37 +149,96 @@ public class ControllerRelatorio {
 		if(pedido.getCreme() == null || pedido.getCreme().toString().isEmpty())
 			str += "Sem creme";
 		else
-			str += pedido.getCreme().toString().isEmpty();
+			str += pedido.getCreme().toString();
 		
-		str += "\nCobertura";
+		str += "\nCobertura: ";
 		
 		if(pedido.getCobertura() == null || pedido.getCobertura().toString().isEmpty())
-			str += "Sem cobertura";
+			str += "Sem cobertura: ";
 		else
-			str += pedido.getCreme().toString().isEmpty();
+			str += pedido.getCobertura().toString();
 		
 		str += "\nRecheios: ";
 		
-		if(!pedido.getRecheios().isEmpty())
+		if(pedido.getRecheios().isEmpty())
 			str += "Sem recheios";
 		else {
-			for(int i = 0; i < pedido.getRecheios().size(); ++i) {
-				str += pedido.getRecheios().get(i) + " ";
+			str += pedido.getRecheios().get(0);
+			for(int i = 1; i < pedido.getRecheios().size(); ++i) {
+				str += ", ";
+				str += pedido.getRecheios().get(i);
 			}
 		}
 		
-		str += "\nPreço: " + pedido.getPreco()
+		str += "\nPreço: R$ " + pedido.getPreco()
 				+ "\nData do Pedido: " + formatter.format(pedido.getDataPedido().getTime());
 		
+		str += "\n\n";
 		return str;
 	}
 	
-	public void irVoltarInicial() {
+	public void irInicial() {
 		try {
 			Telas.telaInicial();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	public void irVendas() {
+		try {
+			Telas.telaVendas();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irHistorico() {
+		try {
+			Telas.telaHistorico();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irEntrada() {
+		try {
+			Telas.telaEntrada();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irEstoque() {
+		try {
+			Telas.telaEstoque();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irRelatorio() {
+		try {
+			Telas.telaRelatorio();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irCadastro() {
+		try {
+			//Telas.telaEntrada();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void irConfiguracoes() {
+		try {
+			Telas.ConfiguaracoesVisualizar();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
